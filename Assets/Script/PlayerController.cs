@@ -48,7 +48,7 @@ public class PlayerController : MonoBehaviour
 
         if (!characterController.isGrounded)
         {
-            moveDirection.y -= gravity * Time.deltaTime;
+            moveDirection.y -= gravity * Time.unscaledDeltaTime;
         }
 
         // Player and Camera rotation
@@ -60,7 +60,7 @@ public class PlayerController : MonoBehaviour
             transform.rotation *= Quaternion.Euler(0, Input.GetAxis("Mouse X") * lookSpeed, 0);
         }
 
-        characterController.Move(moveDirection * Time.deltaTime);
+        characterController.Move(moveDirection * Time.unscaledDeltaTime);
     }
 
     private void OnTriggerEnter(Collider other)

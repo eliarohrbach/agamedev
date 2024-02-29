@@ -18,7 +18,7 @@ public class RecoilAnimationController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        gunAnimator.speed = Time.timeScale;
+        gunAnimator.speed = 1;
 
         if (Input.GetMouseButtonDown(0) && gunAnimator.GetCurrentAnimatorStateInfo(0).IsName("default"))
         {
