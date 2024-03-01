@@ -10,6 +10,8 @@ namespace Player
         public float speed = 8;
         public float jumpStrength = 20;
         public float gravity = 0.25f;
+        public float acceleration = 0.5f;
+        private float _currentAcceleration;
         private float _yVelocity;
 
         void Start()
@@ -27,7 +29,7 @@ namespace Player
         {
             var forward = transform.forward * _inputManager.GetMovementVertical();
             var right = transform.right * _inputManager.GetMovementHorizontal();
-            var groundDirection = (forward + right).normalized * speed;
+            var groundDirection = (forward + right).normalized * (speed + _currentAcceleration);
             if (_characterController.isGrounded)
             {
                 if (_inputManager.GetJump())
@@ -44,7 +46,17 @@ namespace Player
                 _yVelocity -= gravity;
             }
 
-            _characterController.Move((groundDirection + _yVelocity * Vector3.up) * Time.unscaledDeltaTime);
+            var moveDirection = groundDirection + _yVelocity * Vector3.up;
+            _characterController.Move(moveDirection * Time.unscaledDeltaTime);
+            
+            if (_characterController.velocity.magnitude > 1)
+            {
+                _currentAcceleration += acceleration * Time.unscaledDeltaTime;
+            }
+            else
+            {
+                _currentAcceleration = 0;
+            }
         }
     }
 }
