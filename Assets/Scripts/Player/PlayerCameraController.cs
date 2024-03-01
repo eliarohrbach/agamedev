@@ -31,10 +31,10 @@ namespace Player
 
         void Update()
         {
-            _yRotation +=  _inputManager.GetCameraY() * sensitivity;
+            _yRotation += _inputManager.GetCameraY() * sensitivity;
             _yRotation = Mathf.Clamp(_yRotation, -yRotationLimit, yRotationLimit);
             camera.transform.localRotation = Quaternion.AngleAxis(_yRotation, Vector3.left);
-        
+
             var xRotation = _inputManager.GetCameraX() * sensitivity;
             transform.rotation *= Quaternion.AngleAxis(xRotation, Vector3.up);
         }

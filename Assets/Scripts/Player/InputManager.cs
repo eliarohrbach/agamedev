@@ -28,5 +28,10 @@ namespace Player
         {
             return Input.GetButton("Jump");
         }
+
+        public bool GetFireGun()
+        {
+            return Input.GetMouseButton(0);
+        }
     }
 }
