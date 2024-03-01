@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 namespace Gun
 {
@@ -11,6 +12,7 @@ namespace Gun
         private float _timeOfLastShot;
         public bool useUnscaledTime;
         public AudioClip gunShotAudioClip;
+        public AudioClip gunCooldownReadyAudioClip;
         private AudioSource _audioSource;
 
         void Start()
@@ -27,12 +29,27 @@ namespace Gun
                 Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
                 _timeOfLastShot = currentTime;
                 _audioSource.PlayOneShot(gunShotAudioClip);
+                StartCoroutine(PlayGunReadyAudioClip());
             }
         }
 
         private float GetTime()
         {
             return useUnscaledTime ? Time.unscaledTime : Time.time;
+        }
+
+        private IEnumerator PlayGunReadyAudioClip()
+        {
+            if (useUnscaledTime)
+            {
+                yield return new WaitForSecondsRealtime(cooldownSeconds);
+            }
+            else
+            {
+                yield return new WaitForSeconds(cooldownSeconds);
+            }
+
+            _audioSource.PlayOneShot(gunCooldownReadyAudioClip);
         }
     }
 }

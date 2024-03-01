@@ -115,6 +115,7 @@ MonoBehaviour:
   cooldownSeconds: 1
   useUnscaledTime: 0
   gunShotAudioClip: {fileID: 8300000, guid: 11b39272e2d84a64198284d0e7cd3954, type: 3}
+  gunCooldownReadyAudioClip: {fileID: 8300000, guid: 1d6fe19476c282242a46acad89dfc1ed, type: 3}
 --- !u!82 &5851768022971663401
 AudioSource:
   m_ObjectHideFlags: 0
