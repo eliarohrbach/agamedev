@@ -4,7 +4,7 @@ using UnityEngine;
 namespace Player
 {
     [RequireComponent(typeof(CharacterController), typeof(InputManager))]
-    public class FirstPersonMovementController : MonoBehaviour
+    public class PlayerMovementController : MonoBehaviour
     {
         private CharacterController _characterController;
         private InputManager _inputManager;
