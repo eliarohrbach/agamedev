@@ -13,6 +13,7 @@ namespace Player
         public float acceleration = 0.5f;
         private float _currentAcceleration;
         private float _yVelocity;
+        public float Velocity => _characterController.velocity.magnitude;
 
         void Start()
         {
@@ -48,7 +49,7 @@ namespace Player
 
             var moveDirection = groundDirection + _yVelocity * Vector3.up;
             _characterController.Move(moveDirection * Time.unscaledDeltaTime);
-            
+
             if (_characterController.velocity.magnitude > 1)
             {
                 _currentAcceleration += acceleration * Time.unscaledDeltaTime;
