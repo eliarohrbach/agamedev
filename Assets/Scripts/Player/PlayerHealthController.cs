@@ -5,9 +5,9 @@ using UnityEngine.SceneManagement;
 namespace Player
 {
     [RequireComponent(typeof(Collider))]
-    public class PlayerHealthController : MonoBehaviour, IShootable
+    public class PlayerHealthController : MonoBehaviour, IDamageable
     {
-        public void Shot()
+        public void ApplyDamage()
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
