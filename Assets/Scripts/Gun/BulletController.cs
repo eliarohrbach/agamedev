@@ -25,6 +25,9 @@ namespace Gun
 
         void OnTriggerEnter(Collider other)
         {
+            var shootableGameObject = other.GetComponent<IShootable>();
+            shootableGameObject?.Shot();
+
             Destroy(gameObject);
         }
     }
