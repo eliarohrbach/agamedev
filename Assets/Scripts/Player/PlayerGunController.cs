@@ -6,21 +6,19 @@ namespace Player
     [RequireComponent(typeof(InputManager))]
     public class PlayerGunController : MonoBehaviour
     {
-        public GameObject gun;
-        private GunController _gunController;
+        public GunController gun;
         private InputManager _inputManager;
 
         void Start()
         {
             _inputManager = GetComponent<InputManager>();
-            _gunController = gun.GetComponent<GunController>();
         }
 
         void Update()
         {
             if (_inputManager.GetFireGun())
             {
-                _gunController.Fire();
+                gun.Fire();
             }
         }
     }

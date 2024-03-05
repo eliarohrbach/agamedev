@@ -3,19 +3,12 @@ using UnityEngine;
 
 namespace Enemy
 {
-    [RequireComponent(typeof(Collider))]
     public class EnemyAIController : MonoBehaviour
     {
         public float detectionRadius = 50;
         public float rotationSpeed = 5;
-        public GameObject gun;
-        private GunController _gunController;
+        public GunController gun;
         private GameObject _target;
-
-        void Start()
-        {
-            _gunController = gun.GetComponent<GunController>();
-        }
 
         void OnDisable()
         {
@@ -42,22 +35,22 @@ namespace Enemy
                 if (distanceToTarget > detectionRadius)
                 {
                     _target = null;
-                    Debug.Log("Player lost!");
+                    Debug.Log("Player Lost!");
                 }
                 else
                 {
                     RotateTowards(_target.transform.position);
-                    _gunController.Fire();
+                    gun.Fire();
                 }
             }
         }
 
         private void RotateTowards(Vector3 target)
         {
-            Vector3 dir = target - transform.position;
-            dir.y = 0;
-            Quaternion rot = Quaternion.LookRotation(dir);
-            transform.rotation = Quaternion.Slerp(transform.rotation, rot, rotationSpeed * Time.deltaTime);
+            var direction = target - transform.position;
+            direction.y = 0;
+            var rotation = Quaternion.LookRotation(direction);
+            transform.rotation = Quaternion.Slerp(transform.rotation, rotation, rotationSpeed * Time.deltaTime);
         }
     }
 }

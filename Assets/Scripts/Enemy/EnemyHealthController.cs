@@ -1,6 +1,5 @@
 ﻿using Gun;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 namespace Enemy
 {
