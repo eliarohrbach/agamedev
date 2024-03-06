@@ -1,4 +1,5 @@
-﻿using Gun;
+﻿using System;
+using Gun;
 using UnityEngine;
 
 namespace Enemy
@@ -9,6 +10,12 @@ namespace Enemy
         public float rotationSpeed = 5;
         public GunController gun;
         private GameObject _target;
+        private GameObject[] _players;
+
+        private void Start()
+        {
+            _players = GameObject.FindGameObjectsWithTag("Player");
+        }
 
         void OnDisable()
         {
@@ -19,30 +26,50 @@ namespace Enemy
         {
             if (_target is null)
             {
-                foreach (var overlappingCollider in Physics.OverlapSphere(transform.position, detectionRadius))
+                foreach (var player in _players)
                 {
-                    if (overlappingCollider.gameObject.CompareTag("Player"))
+                    if (CanSee(player))
                     {
+                        _target = player;
                         Debug.Log("Player Detected!");
-                        _target = overlappingCollider.gameObject;
                         break;
                     }
                 }
             }
             else
             {
-                var distanceToTarget = (_target.transform.position - transform.position).magnitude;
-                if (distanceToTarget > detectionRadius)
-                {
-                    _target = null;
-                    Debug.Log("Player Lost!");
-                }
-                else
+                if (CanSee(_target))
                 {
                     RotateTowards(_target.transform.position);
                     gun.Fire();
                 }
+                else
+                {
+                    _target = null;
+                    Debug.Log("Player Lost!");
+                }
             }
+        }
+
+        private bool CanSee(GameObject target)
+        {
+            if (DistanceToTarget(target) < detectionRadius)
+            {
+                RaycastHit raycastHit;
+                Debug.DrawRay(transform.position, target.transform.position - transform.position, Color.red);
+                if (Physics.Raycast(transform.position, target.transform.position - transform.position, out raycastHit,
+                        detectionRadius))
+                {
+                    return raycastHit.transform.CompareTag("Player");
+                }
+            }
+
+            return false;
+        }
+
+        private float DistanceToTarget(GameObject target)
+        {
+            return (target.transform.position - transform.position).magnitude;
         }
 
         private void RotateTowards(Vector3 target)
