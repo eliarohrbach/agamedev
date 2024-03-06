@@ -6,6 +6,7 @@ using UnityEngine;
 public class LevelController : MonoBehaviour
 {
     [SerializeField] GameObject levelCompleteUI;
+    [SerializeField] GameObject levelStartUI;
     [SerializeField] GameObject winZone;
     [SerializeField] GameObject timeController;
     [SerializeField] GameObject player;
@@ -29,5 +30,20 @@ public class LevelController : MonoBehaviour
         player.GetComponent<PlayerCameraController>().enabled = false;
         player.GetComponent<PlayerGunController>().enabled = false;
         Time.timeScale = 0;
+    }
+
+    public void GameStart()
+    {
+        levelStartUI.SetActive(false);
+        timeController.SetActive(true);
+        player.GetComponent<PlayerCameraController>().enabled = true;
+        player.GetComponent<PlayerMovementController>().enabled = true;
+        player.GetComponent<PlayerGunController>().enabled = true;
+    }
+
+    public void QuitGame()
+    {
+        Debug.Log("Quit Game");
+        Application.Quit();
     }
 }

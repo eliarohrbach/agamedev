@@ -10051,6 +10051,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 856724915046524370, guid: c485cd7641d6f1d4a81649be4a681d82, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1529406637066801256, guid: c485cd7641d6f1d4a81649be4a681d82, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4444035687591678577, guid: c485cd7641d6f1d4a81649be4a681d82, type: 3}
       propertyPath: m_LocalPosition.x
       value: 410
@@ -10089,6 +10097,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4444035687591678577, guid: c485cd7641d6f1d4a81649be4a681d82, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5998513981063172783, guid: c485cd7641d6f1d4a81649be4a681d82, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6905618581423292134, guid: c485cd7641d6f1d4a81649be4a681d82, type: 3}
@@ -11856,6 +11868,10 @@ PrefabInstance:
     - target: {fileID: 1567161300898785333, guid: 1cbc28cd0b3aea3408f67cfec3c1a533, type: 3}
       propertyPath: m_Name
       value: TimeManagement
+      objectReference: {fileID: 0}
+    - target: {fileID: 1567161300898785333, guid: 1cbc28cd0b3aea3408f67cfec3c1a533, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3441796375405268398, guid: 1cbc28cd0b3aea3408f67cfec3c1a533, type: 3}
       propertyPath: m_LocalPosition.x
@@ -15818,10 +15834,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1359928617596885901, guid: ecb81e7cd952b894696741a5c57332bc, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Level01Scene
-      objectReference: {fileID: 0}
+    - target: {fileID: 5249861857196475336, guid: ecb81e7cd952b894696741a5c57332bc, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1111630283}
+    - target: {fileID: 5249861857196475336, guid: ecb81e7cd952b894696741a5c57332bc, type: 3}
+      propertyPath: timeController
+      value: 
+      objectReference: {fileID: 472136188}
     - target: {fileID: 5357264874985680847, guid: ecb81e7cd952b894696741a5c57332bc, type: 3}
       propertyPath: m_Name
       value: SceneController

@@ -83,7 +83,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6cefe1d178c42f4b5cb3343ac91ec41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  detectionRadius: 20
+  detectionRadius: 30
   rotationSpeed: 5
   gun: {fileID: 8714274371429634095}
 --- !u!1 &7138023208140126740
