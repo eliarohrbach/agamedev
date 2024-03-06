@@ -65,6 +65,9 @@ public class WinZoneBehavior : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
-        endLevel = true;
+        if (endZoneOpen)
+        {
+            endLevel = true;
+        }
     }
 }

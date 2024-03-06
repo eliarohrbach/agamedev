@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3215223456133028382}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -83,7 +83,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6cefe1d178c42f4b5cb3343ac91ec41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  detectionRadius: 50
+  detectionRadius: 20
   rotationSpeed: 5
   gun: {fileID: 8714274371429634095}
 --- !u!1 &7138023208140126740
