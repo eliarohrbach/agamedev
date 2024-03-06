@@ -286,8 +286,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 8
-  jumpStrength: 20
-  gravity: 0.25
+  jumpStrength: 10
+  gravity: 30
   acceleration: 0.5
 --- !u!114 &2446353836137047883
 MonoBehaviour:

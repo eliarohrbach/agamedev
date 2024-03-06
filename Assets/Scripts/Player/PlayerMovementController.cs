@@ -44,7 +44,7 @@ namespace Player
             }
             else
             {
-                _yVelocity -= gravity;
+                _yVelocity -= gravity * Time.unscaledDeltaTime;
             }
 
             var moveDirection = groundDirection + _yVelocity * Vector3.up;
