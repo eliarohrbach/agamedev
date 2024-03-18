@@ -40,10 +40,4 @@ public class LevelController : MonoBehaviour
         player.GetComponent<PlayerMovementController>().enabled = true;
         player.GetComponent<PlayerGunController>().enabled = true;
     }
-
-    public void QuitGame()
-    {
-        Debug.Log("Quit Game");
-        Application.Quit();
-    }
 }

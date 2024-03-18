@@ -6,9 +6,6 @@ using UnityEngine.SceneManagement;
 
 public class SceneControllerScript : MonoBehaviour
 {
-    [SerializeField] GameObject timeController;
-    [SerializeField] GameObject levelCompleteUI;
-    [SerializeField] GameObject player;
 
     public void Level01Scene()
     {
@@ -20,4 +17,9 @@ public class SceneControllerScript : MonoBehaviour
         SceneManager.LoadScene("TestingScene");
     }
 
+    public void QuitGame()
+    {
+        Debug.Log("Quit Game");
+        SceneManager.LoadScene("MainMenu");
+    }
 }
