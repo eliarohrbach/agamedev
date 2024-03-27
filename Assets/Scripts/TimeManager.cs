@@ -4,7 +4,6 @@ using UnityEngine;
 public class TimeManager : MonoBehaviour
 {
     public GameObject player;
-    public float velocityToggle = 1;
     private PlayerMovementController _playerMovementController;
 
     private void Start()
@@ -24,9 +23,15 @@ public class TimeManager : MonoBehaviour
 
     void Update()
     {
-        var velocity = _playerMovementController.Velocity;
-        float time = velocity > velocityToggle ? .2f : 1f;
-        float lerpTime = velocity > velocityToggle ? .05f : .5f;
-        Time.timeScale = Mathf.Lerp(Time.timeScale, time, lerpTime);
+        var timeScale = 1f;
+        var lerpSpeed = 0.7f;
+        if (_playerMovementController.CurrentAcceleration > 0)
+        {
+            timeScale = 0.2f;
+            lerpSpeed = 0.3f;
+        }
+
+        Time.timeScale = Mathf.Lerp(Time.timeScale, timeScale,
+            1 - Mathf.Pow(1 - lerpSpeed, Time.unscaledDeltaTime * 10));
     }
 }

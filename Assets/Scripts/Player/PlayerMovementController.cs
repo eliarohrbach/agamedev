@@ -12,6 +12,8 @@ namespace Player
         public float gravity = 0.25f;
         public float acceleration = 0.5f;
         private float _currentAcceleration;
+        public float CurrentAcceleration => _currentAcceleration;
+
         private float _yVelocity;
         public float Velocity => _characterController.velocity.magnitude;
 
