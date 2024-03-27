@@ -5,6 +5,8 @@ public class TimeManager : MonoBehaviour
 {
     public GameObject player;
     private PlayerMovementController _playerMovementController;
+    private const float MinTimeScale = 0.15f;
+    private const float BaseSlowedDownTimeScale = 0.25f;
 
     private void Start()
     {
@@ -27,7 +29,8 @@ public class TimeManager : MonoBehaviour
         var lerpSpeed = 0.7f;
         if (_playerMovementController.CurrentAcceleration > 0)
         {
-            timeScale = 0.2f;
+            timeScale = Mathf.Max(MinTimeScale, BaseSlowedDownTimeScale - _playerMovementController.CurrentAcceleration /
+                (_playerMovementController.acceleration * 200));
             lerpSpeed = 0.3f;
         }
 
