@@ -15843,6 +15843,14 @@ PrefabInstance:
       value: SceneController
       objectReference: {fileID: 0}
     - target: {fileID: 7868247448350558569, guid: ecb81e7cd952b894696741a5c57332bc, type: 3}
+      propertyPath: ui
+      value: 
+      objectReference: {fileID: 1789097450}
+    - target: {fileID: 7868247448350558569, guid: ecb81e7cd952b894696741a5c57332bc, type: 3}
+      propertyPath: enemy
+      value: 
+      objectReference: {fileID: 848606803}
+    - target: {fileID: 7868247448350558569, guid: ecb81e7cd952b894696741a5c57332bc, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 1111630283}
@@ -16737,13 +16745,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4699970020354423926, guid: c708573cb685fcc4c97acf8881c242a1, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c708573cb685fcc4c97acf8881c242a1, type: 3}
+--- !u!1 &1789097450 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4699970020354423926, guid: c708573cb685fcc4c97acf8881c242a1, type: 3}
+  m_PrefabInstance: {fileID: 1789097449}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1790103701
 PrefabInstance:
   m_ObjectHideFlags: 0

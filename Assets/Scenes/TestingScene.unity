@@ -215,6 +215,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UI
       objectReference: {fileID: 0}
+    - target: {fileID: 4699970020354423926, guid: c708573cb685fcc4c97acf8881c242a1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -349,8 +353,16 @@ PrefabInstance:
       value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 2164316820718988994, guid: d00a5dc90cbf3674393da9c0101b9b84, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2164316820718988994, guid: d00a5dc90cbf3674393da9c0101b9b84, type: 3}
       propertyPath: m_TagString
       value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 3215223456133028382, guid: d00a5dc90cbf3674393da9c0101b9b84, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6639219517432780343, guid: d00a5dc90cbf3674393da9c0101b9b84, type: 3}
       propertyPath: m_LocalPosition.x
@@ -504,6 +516,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 856724915046524370, guid: c485cd7641d6f1d4a81649be4a681d82, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1529406637066801256, guid: c485cd7641d6f1d4a81649be4a681d82, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4444035687591678577, guid: c485cd7641d6f1d4a81649be4a681d82, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -544,6 +564,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5998513981063172783, guid: c485cd7641d6f1d4a81649be4a681d82, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6905618581423292134, guid: c485cd7641d6f1d4a81649be4a681d82, type: 3}
       propertyPath: m_Name
       value: Player
@@ -553,6 +577,16 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c485cd7641d6f1d4a81649be4a681d82, type: 3}
+--- !u!1 &1554782410 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2164316820718988994, guid: d00a5dc90cbf3674393da9c0101b9b84, type: 3}
+  m_PrefabInstance: {fileID: 767429625}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1846899727 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4699970020354423926, guid: c708573cb685fcc4c97acf8881c242a1, type: 3}
+  m_PrefabInstance: {fileID: 91316622}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1991283754
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -568,6 +602,10 @@ PrefabInstance:
     - target: {fileID: 1567161300898785333, guid: 1cbc28cd0b3aea3408f67cfec3c1a533, type: 3}
       propertyPath: m_Name
       value: TimeManagement
+      objectReference: {fileID: 0}
+    - target: {fileID: 1567161300898785333, guid: 1cbc28cd0b3aea3408f67cfec3c1a533, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3441796375405268398, guid: 1cbc28cd0b3aea3408f67cfec3c1a533, type: 3}
       propertyPath: m_LocalPosition.x
@@ -719,18 +757,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5249861857196475336, guid: ecb81e7cd952b894696741a5c57332bc, type: 3}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 254410159}
-    - target: {fileID: 5249861857196475336, guid: ecb81e7cd952b894696741a5c57332bc, type: 3}
-      propertyPath: timeController
-      value: 
-      objectReference: {fileID: 259563427}
     - target: {fileID: 5357264874985680847, guid: ecb81e7cd952b894696741a5c57332bc, type: 3}
       propertyPath: m_Name
       value: SceneController
       objectReference: {fileID: 0}
+    - target: {fileID: 7868247448350558569, guid: ecb81e7cd952b894696741a5c57332bc, type: 3}
+      propertyPath: ui
+      value: 
+      objectReference: {fileID: 1846899727}
+    - target: {fileID: 7868247448350558569, guid: ecb81e7cd952b894696741a5c57332bc, type: 3}
+      propertyPath: enemy
+      value: 
+      objectReference: {fileID: 1554782410}
     - target: {fileID: 7868247448350558569, guid: ecb81e7cd952b894696741a5c57332bc, type: 3}
       propertyPath: player
       value: 

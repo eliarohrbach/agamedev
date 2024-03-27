@@ -10,6 +10,9 @@ public class LevelController : MonoBehaviour
     [SerializeField] GameObject winZone;
     [SerializeField] GameObject timeController;
     [SerializeField] GameObject player;
+    [SerializeField] GameObject ui;
+    [SerializeField] GameObject enemy;
+
     public bool triggerOn = false;
 
 
@@ -27,15 +30,19 @@ public class LevelController : MonoBehaviour
     {
         levelCompleteUI.SetActive(true);
         timeController.SetActive(false);
+        ui.SetActive(false);
         player.GetComponent<PlayerCameraController>().enabled = false;
+        player.GetComponent<PlayerMovementController>().enabled = false;
         player.GetComponent<PlayerGunController>().enabled = false;
-        Time.timeScale = 0;
+        levelCompleteUI.GetComponent<Animator>().SetTrigger("Start");
     }
 
     public void GameStart()
     {
         levelStartUI.SetActive(false);
         timeController.SetActive(true);
+        ui.SetActive(true);
+        enemy.SetActive(true);
         player.GetComponent<PlayerCameraController>().enabled = true;
         player.GetComponent<PlayerMovementController>().enabled = true;
         player.GetComponent<PlayerGunController>().enabled = true;
