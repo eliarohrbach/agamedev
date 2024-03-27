@@ -11,15 +11,16 @@ public class SceneControllerScript : MonoBehaviour
         SceneManager.LoadScene("MainMenu");
     }
 
+    public void TestingScene()
+    {
+        SceneManager.LoadScene("TestingScene");
+    }
+
     public void Level01Scene()
     {
         SceneManager.LoadScene("Level01");
     }
 
-    public void TestingScene()
-    {
-        SceneManager.LoadScene("TestingScene");
-    }
 
     public void QuitGame()
     {
