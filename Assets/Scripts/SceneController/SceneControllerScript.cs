@@ -6,6 +6,10 @@ using UnityEngine.SceneManagement;
 
 public class SceneControllerScript : MonoBehaviour
 {
+    public void MainMenuScene()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
 
     public void Level01Scene()
     {
