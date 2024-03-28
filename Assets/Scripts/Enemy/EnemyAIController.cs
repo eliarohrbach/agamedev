@@ -45,8 +45,12 @@ namespace Enemy
             {
                 if (CanSee(_target))
                 {
-                    RotateTowards(_target.transform.position);
-                    gun.Fire();
+                    var targetLookRotation = GetTargetLookRotation(_target.transform.position);
+                    RotateTowards(targetLookRotation);
+                    if (Quaternion.Angle(transform.rotation, targetLookRotation) < 1)
+                    {
+                        gun.Fire();
+                    }
                 }
                 else
                 {
@@ -79,12 +83,16 @@ namespace Enemy
             return (target.transform.position - transform.position).magnitude;
         }
 
-        private void RotateTowards(Vector3 target)
+        private void RotateTowards(Quaternion rotation)
+        {
+            transform.rotation = Quaternion.Slerp(transform.rotation, rotation, rotationSpeed * Time.deltaTime);
+        }
+
+        private Quaternion GetTargetLookRotation(Vector3 target)
         {
             var direction = target - transform.position;
             direction.y = 0;
-            var rotation = Quaternion.LookRotation(direction);
-            transform.rotation = Quaternion.Slerp(transform.rotation, rotation, rotationSpeed * Time.deltaTime);
+            return Quaternion.LookRotation(direction);
         }
     }
 }
