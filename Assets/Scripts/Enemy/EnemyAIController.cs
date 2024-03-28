@@ -1,6 +1,7 @@
 ﻿using System;
 using Gun;
 using UnityEngine;
+using UnityEngine.AI;
 
 namespace Enemy
 {
@@ -11,10 +12,12 @@ namespace Enemy
         public GunController gun;
         private GameObject _target;
         private GameObject[] _players;
+        private NavMeshAgent _navMeshAgent;
 
         private void Start()
         {
             _players = GameObject.FindGameObjectsWithTag("Player");
+            _navMeshAgent = GetComponent<NavMeshAgent>();
         }
 
         void OnDisable()
@@ -31,12 +34,14 @@ namespace Enemy
                     if (CanSee(player))
                     {
                         _target = player;
+                        _navMeshAgent.isStopped = true;
                         Debug.Log("Player Detected!");
                         break;
                     }
                 }
             }
-            else
+
+            if (_target is not null)
             {
                 if (CanSee(_target))
                 {
@@ -45,6 +50,8 @@ namespace Enemy
                 }
                 else
                 {
+                    _navMeshAgent.SetDestination(_target.transform.position);
+                    _navMeshAgent.isStopped = false;
                     _target = null;
                     Debug.Log("Player Lost!");
                 }
