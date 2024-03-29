@@ -5,6 +5,7 @@ using UnityEngine.AI;
 
 namespace Enemy
 {
+    [RequireComponent(typeof(NavMeshAgentWithObstacle))]
     public class EnemyAIController : MonoBehaviour
     {
         public float detectionRadius = 50;
@@ -12,12 +13,12 @@ namespace Enemy
         public GunController gun;
         private GameObject _target;
         private GameObject[] _players;
-        private NavMeshAgent _navMeshAgent;
+        private NavMeshAgentWithObstacle _navMeshAgent;
 
-        private void Start()
+        private void Awake()
         {
+            _navMeshAgent = GetComponent<NavMeshAgentWithObstacle>();
             _players = GameObject.FindGameObjectsWithTag("Player");
-            _navMeshAgent = GetComponent<NavMeshAgent>();
         }
 
         void OnDisable()
@@ -34,7 +35,7 @@ namespace Enemy
                     if (CanSee(player))
                     {
                         _target = player;
-                        _navMeshAgent.isStopped = true;
+                        _navMeshAgent.IsStopped = true;
                         Debug.Log("Player Detected!");
                         break;
                     }
@@ -55,7 +56,7 @@ namespace Enemy
                 else
                 {
                     _navMeshAgent.SetDestination(_target.transform.position);
-                    _navMeshAgent.isStopped = false;
+                    _navMeshAgent.IsStopped = false;
                     _target = null;
                     Debug.Log("Player Lost!");
                 }

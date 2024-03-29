@@ -11,7 +11,7 @@ namespace Player
         [Range(0f, 90f)] public float yRotationLimit = 88f;
         private float _yRotation;
 
-        void Start()
+        private void Awake()
         {
             _inputManager = GetComponent<InputManager>();
         }
@@ -29,7 +29,7 @@ namespace Player
             Cursor.lockState = CursorLockMode.None;
         }
 
-        void Update()
+        private void Update()
         {
             _yRotation += _inputManager.GetCameraY() * sensitivity;
             _yRotation = Mathf.Clamp(_yRotation, -yRotationLimit, yRotationLimit);

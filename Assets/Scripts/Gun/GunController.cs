@@ -15,7 +15,7 @@ namespace Gun
         public AudioClip gunCooldownReadyAudioClip;
         private AudioSource _audioSource;
 
-        void Start()
+        private void Awake()
         {
             _timeOfLastShot = GetTime();
             _audioSource = GetComponent<AudioSource>();

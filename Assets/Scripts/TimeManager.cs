@@ -3,14 +3,13 @@ using UnityEngine;
 
 public class TimeManager : MonoBehaviour
 {
-    public GameObject player;
     private PlayerMovementController _playerMovementController;
     private const float MinTimeScale = 0.15f;
     private const float BaseSlowedDownTimeScale = 0.25f;
 
-    private void Start()
+    private void Awake()
     {
-        _playerMovementController = player.GetComponent<PlayerMovementController>();
+        _playerMovementController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovementController>();
     }
 
     void OnEnable()
@@ -29,8 +28,9 @@ public class TimeManager : MonoBehaviour
         var lerpSpeed = 0.7f;
         if (_playerMovementController.CurrentAcceleration > 0)
         {
-            timeScale = Mathf.Max(MinTimeScale, BaseSlowedDownTimeScale - _playerMovementController.CurrentAcceleration /
-                (_playerMovementController.acceleration * 200));
+            timeScale = Mathf.Max(MinTimeScale, BaseSlowedDownTimeScale -
+                                                _playerMovementController.CurrentAcceleration /
+                                                (_playerMovementController.acceleration * 200));
             lerpSpeed = 0.3f;
         }
 

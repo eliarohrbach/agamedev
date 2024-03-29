@@ -9,12 +9,12 @@ namespace Player
         public GunController gun;
         private InputManager _inputManager;
 
-        void Start()
+        private void Awake()
         {
             _inputManager = GetComponent<InputManager>();
         }
 
-        void Update()
+        private void Update()
         {
             if (_inputManager.GetFireGun())
             {

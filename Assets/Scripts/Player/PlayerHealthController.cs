@@ -7,9 +7,14 @@ namespace Player
     [RequireComponent(typeof(Collider))]
     public class PlayerHealthController : MonoBehaviour, IDamageable
     {
+        public bool invulnerable = false;
+
         public void ApplyDamage()
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            if (!invulnerable)
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            }
         }
     }
 }

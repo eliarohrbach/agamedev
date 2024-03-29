@@ -14,7 +14,7 @@ namespace Gun
             _startTime = Time.time;
         }
 
-        void Update()
+        private void Update()
         {
             transform.position += transform.forward * (Time.deltaTime * speed);
             if (Time.time > _startTime + despawnTimeSeconds)
@@ -23,7 +23,7 @@ namespace Gun
             }
         }
 
-        void OnTriggerEnter(Collider other)
+        private void OnTriggerEnter(Collider other)
         {
             var shootableGameObject = other.GetComponent<IDamageable>();
             shootableGameObject?.ApplyDamage();

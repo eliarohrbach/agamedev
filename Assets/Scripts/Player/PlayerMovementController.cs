@@ -17,7 +17,7 @@ namespace Player
         private float _yVelocity;
         public float Velocity => _characterController.velocity.magnitude;
 
-        void Start()
+        private void Awake()
         {
             _characterController = GetComponent<CharacterController>();
             _inputManager = GetComponent<InputManager>();
@@ -28,7 +28,7 @@ namespace Player
             _yVelocity = 0;
         }
 
-        void Update()
+        private void Update()
         {
             var forward = transform.forward * _inputManager.GetMovementVertical();
             var right = transform.right * _inputManager.GetMovementHorizontal();
