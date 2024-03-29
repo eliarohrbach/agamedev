@@ -8,8 +8,9 @@ namespace Enemy
     [RequireComponent(typeof(NavMeshAgentWithObstacle))]
     public class EnemyAIController : MonoBehaviour
     {
-        public float detectionRadius = 50;
         public float rotationSpeed = 5;
+        public float fov = 180;
+        public float automaticDetectionRadius = 4;
         public GunController gun;
         private GameObject _target;
         private GameObject[] _players;
@@ -65,23 +66,26 @@ namespace Enemy
 
         private bool CanSee(GameObject target)
         {
-            if (DistanceToTarget(target) < detectionRadius)
+            var targetDirection = target.transform.position - transform.position;
+
+            if (targetDirection.magnitude < automaticDetectionRadius)
             {
-                RaycastHit raycastHit;
-                Debug.DrawRay(transform.position, target.transform.position - transform.position, Color.red);
-                if (Physics.Raycast(transform.position, target.transform.position - transform.position, out raycastHit,
-                        detectionRadius))
-                {
-                    return raycastHit.transform.CompareTag("Player");
-                }
+                return true;
+            }
+
+            if (Vector3.Angle(transform.forward, targetDirection) > fov / 2)
+            {
+                return false;
+            }
+
+            RaycastHit raycastHit;
+            Debug.DrawRay(transform.position, targetDirection, Color.red);
+            if (Physics.Raycast(transform.position, targetDirection, out raycastHit))
+            {
+                return raycastHit.transform.CompareTag("Player");
             }
 
             return false;
-        }
-
-        private float DistanceToTarget(GameObject target)
-        {
-            return (target.transform.position - transform.position).magnitude;
         }
 
         private void RotateTowards(Quaternion rotation)
