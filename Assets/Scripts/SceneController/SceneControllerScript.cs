@@ -11,6 +11,11 @@ public class SceneControllerScript : MonoBehaviour
         SceneManager.LoadScene("MainMenu");
     }
 
+    public void Restart()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
     public void TestingScene()
     {
         SceneManager.LoadScene("TestingScene");
@@ -25,6 +30,6 @@ public class SceneControllerScript : MonoBehaviour
     public void QuitGame()
     {
         Debug.Log("Quit Game");
-        SceneManager.LoadScene("MainMenu");
+        Application.Quit();
     }
 }
