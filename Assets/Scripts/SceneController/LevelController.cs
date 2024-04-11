@@ -1,3 +1,4 @@
+using System;
 using Player;
 using System.Collections;
 using System.Collections.Generic;
@@ -12,9 +13,15 @@ public class LevelController : MonoBehaviour
     [SerializeField] GameObject player;
     [SerializeField] GameObject ui;
     [SerializeField] GameObject enemy;
+    private GameObject[] saveZones;
 
     public bool triggerOn = false;
 
+
+    private void Start()
+    {
+        saveZones = GameObject.FindGameObjectsWithTag("SaveZone");
+    }
 
     void Update()
     {
@@ -46,5 +53,9 @@ public class LevelController : MonoBehaviour
         player.GetComponent<PlayerCameraController>().enabled = true;
         player.GetComponent<PlayerMovementController>().enabled = true;
         player.GetComponent<PlayerGunController>().enabled = true;
+        foreach (var saveZone in saveZones)
+        {
+            saveZone.SetActive(false);   
+        }
     }
 }

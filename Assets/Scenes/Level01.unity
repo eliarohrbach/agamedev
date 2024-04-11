@@ -20955,6 +20955,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: SaveZone
       objectReference: {fileID: 0}
+    - target: {fileID: 4031400260644155909, guid: 34cb5e3604d939f4c868cbc1f8166017, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4031400260644155909, guid: 34cb5e3604d939f4c868cbc1f8166017, type: 3}
+      propertyPath: m_TagString
+      value: SaveZone
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
