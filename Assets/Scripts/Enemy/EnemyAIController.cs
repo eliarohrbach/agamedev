@@ -28,11 +28,14 @@ namespace Enemy
         private Vector3 _startingPosition;
         private SearchState _searchState = SearchState.NONE;
         private Quaternion _searchStartingRotation;
+        public Transform[] patrolPath;
+        private int _currentPatrolIndex;
+        private bool _isPatrolling;
 
         private void Awake()
         {
             _navMeshAgent = GetComponent<NavMeshAgentWithObstacle>();
-            _navMeshAgent.OnNavEnded += LookAround;
+            _navMeshAgent.OnNavEnded += OnNavReached;
             _players = GameObject.FindGameObjectsWithTag("Player");
         }
 
@@ -45,6 +48,8 @@ namespace Enemy
         {
             _target = null;
             _searchState = SearchState.NONE;
+            _currentPatrolIndex = 0;
+            _isPatrolling = false;
         }
 
         void Update()
@@ -88,6 +93,17 @@ namespace Enemy
                         _searchState = SearchState.FINAL_RETURNING;
                     }
                 }
+                else if (patrolPath is not null && patrolPath.Length > 0 && !_isPatrolling)
+                {
+                    SetNavDestination(patrolPath[_currentPatrolIndex].position);
+                    _currentPatrolIndex++;
+                    if (_currentPatrolIndex >= patrolPath.Length)
+                    {
+                        _currentPatrolIndex = 0;
+                    }
+
+                    _isPatrolling = true;
+                }
 
 
                 foreach (var player in _players)
@@ -96,6 +112,7 @@ namespace Enemy
                     {
                         _target = player;
                         _navMeshAgent.IsStopped = true;
+                        _searchState = SearchState.NONE;
                         Debug.Log("Player Detected!");
                         break;
                     }
@@ -128,10 +145,11 @@ namespace Enemy
             _navMeshAgent.IsStopped = false;
         }
 
-        private void LookAround()
+        private void OnNavReached()
         {
             _searchState = SearchState.RIGHT;
             _searchStartingRotation = transform.rotation;
+            _isPatrolling = false;
             Debug.Log("nav ended");
         }
 
