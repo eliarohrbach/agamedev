@@ -12,7 +12,6 @@ public class LevelController : MonoBehaviour
     [SerializeField] GameObject timeController;
     [SerializeField] GameObject player;
     [SerializeField] GameObject ui;
-    [SerializeField] GameObject enemy;
     private GameObject[] saveZones;
 
     public bool triggerOn = false;
@@ -49,7 +48,6 @@ public class LevelController : MonoBehaviour
         levelStartUI.SetActive(false);
         timeController.SetActive(true);
         ui.SetActive(true);
-        enemy.SetActive(true);
         player.GetComponent<PlayerCameraController>().enabled = true;
         player.GetComponent<PlayerMovementController>().enabled = true;
         player.GetComponent<PlayerGunController>().enabled = true;

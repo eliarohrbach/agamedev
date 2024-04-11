@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -12,6 +13,8 @@ namespace Enemy
 
         private float _lastMoveTime;
         private Vector3 _lastPosition;
+        private Vector3? _destination;
+        public event Action OnNavEnded = delegate { };
 
         public bool IsStopped
         {
@@ -35,6 +38,7 @@ namespace Enemy
             _obstacle.carving = true;
 
             _lastPosition = transform.position;
+            _destination = null;
         }
 
         private void Update()
@@ -47,6 +51,12 @@ namespace Enemy
 
             if (_lastMoveTime + _obstacle.carvingTimeToStationary < Time.time)
             {
+                if (_destination is not null)
+                {
+                    OnNavEnded.Invoke();
+                    _destination = null;
+                }
+
                 _agent.enabled = false;
                 _obstacle.enabled = true;
             }
@@ -54,6 +64,7 @@ namespace Enemy
 
         public void SetDestination(Vector3 position)
         {
+            Debug.Log("set dest");
             _obstacle.enabled = false;
 
             _lastMoveTime = Time.time;
@@ -67,6 +78,7 @@ namespace Enemy
             yield return null;
             _agent.enabled = true;
             _agent.SetDestination(position);
+            _destination = position;
         }
     }
 }

@@ -1,10 +1,20 @@
 ﻿using System;
 using Gun;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
 namespace Enemy
 {
+    enum SearchState
+    {
+        NONE,
+        RIGHT,
+        RETURNING,
+        LEFT,
+        FINAL_RETURNING
+    }
+
     [RequireComponent(typeof(NavMeshAgentWithObstacle))]
     public class EnemyAIController : MonoBehaviour
     {
@@ -15,22 +25,71 @@ namespace Enemy
         private GameObject _target;
         private GameObject[] _players;
         private NavMeshAgentWithObstacle _navMeshAgent;
+        private Vector3 _startingPosition;
+        private SearchState _searchState = SearchState.NONE;
+        private Quaternion _searchStartingRotation;
 
         private void Awake()
         {
             _navMeshAgent = GetComponent<NavMeshAgentWithObstacle>();
+            _navMeshAgent.OnNavEnded += LookAround;
             _players = GameObject.FindGameObjectsWithTag("Player");
+        }
+
+        private void Start()
+        {
+            _startingPosition = transform.position;
         }
 
         void OnDisable()
         {
             _target = null;
+            _searchState = SearchState.NONE;
         }
 
         void Update()
         {
             if (_target is null)
             {
+                if (_searchState == SearchState.RIGHT)
+                {
+                    var targetRotation = GetRotationByAngle(_searchStartingRotation, 110f);
+                    RotateTowards(targetRotation);
+                    if (Quaternion.Angle(transform.rotation, targetRotation) < 1)
+                    {
+                        _searchState = SearchState.RETURNING;
+                    }
+                }
+                else if (_searchState is SearchState.RETURNING or SearchState.FINAL_RETURNING)
+                {
+                    RotateTowards(_searchStartingRotation);
+                    if (Quaternion.Angle(transform.rotation, _searchStartingRotation) < 1)
+                    {
+                        if (_searchState == SearchState.RETURNING)
+                        {
+                            _searchState = SearchState.LEFT;
+                        }
+                        else
+                        {
+                            _searchState = SearchState.NONE;
+                            if (Vector3.Distance(_startingPosition, transform.position) > 3)
+                            {
+                                SetNavDestination(_startingPosition);
+                            }
+                        }
+                    }
+                }
+                else if (_searchState == SearchState.LEFT)
+                {
+                    var targetRotation = GetRotationByAngle(_searchStartingRotation, -110f);
+                    RotateTowards(targetRotation);
+                    if (Quaternion.Angle(transform.rotation, targetRotation) < 1)
+                    {
+                        _searchState = SearchState.FINAL_RETURNING;
+                    }
+                }
+
+
                 foreach (var player in _players)
                 {
                     if (CanSee(player))
@@ -56,12 +115,30 @@ namespace Enemy
                 }
                 else
                 {
-                    _navMeshAgent.SetDestination(_target.transform.position);
-                    _navMeshAgent.IsStopped = false;
+                    SetNavDestination(_target.transform.position);
                     _target = null;
                     Debug.Log("Player Lost!");
                 }
             }
+        }
+
+        private void SetNavDestination(Vector3 target)
+        {
+            _navMeshAgent.SetDestination(target);
+            _navMeshAgent.IsStopped = false;
+        }
+
+        private void LookAround()
+        {
+            _searchState = SearchState.RIGHT;
+            _searchStartingRotation = transform.rotation;
+            Debug.Log("nav ended");
+        }
+
+        private Quaternion GetRotationByAngle(Quaternion startingRotation, float angle)
+        {
+            var rotation = Quaternion.AngleAxis(angle, Vector3.up);
+            return startingRotation * rotation;
         }
 
         private bool CanSee(GameObject target)
