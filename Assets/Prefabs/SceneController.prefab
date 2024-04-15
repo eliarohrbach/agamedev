@@ -1131,6 +1131,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: NextLevelButton
       objectReference: {fileID: 0}
+    - target: {fileID: 4799477375537777978, guid: 937449faa2748c243995c04795739ff5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 5249861857196475336}
+    - target: {fileID: 4799477375537777978, guid: 937449faa2748c243995c04795739ff5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: MainMenuScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 4799477375537777978, guid: 937449faa2748c243995c04795739ff5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SceneControllerScript, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 9093226286618046051, guid: 937449faa2748c243995c04795739ff5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
