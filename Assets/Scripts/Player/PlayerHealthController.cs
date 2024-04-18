@@ -11,11 +11,13 @@ namespace Player
     {
         public bool invulnerable = false;
         public event Action OnDeath = delegate { };
+        private bool isDead = false;
 
         public void ApplyDamage()
         {
-            if (!invulnerable)
+            if (!invulnerable && !isDead)
             {
+                isDead = true;
                 OnDeath.Invoke();
                 StartCoroutine(DeathAnimation());
             }

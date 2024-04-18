@@ -28,6 +28,8 @@ namespace Enemy
             }
         }
 
+        public float Velocity => _agent.enabled ? _agent.velocity.magnitude : 0;
+
         private void Awake()
         {
             _agent = GetComponent<NavMeshAgent>();
