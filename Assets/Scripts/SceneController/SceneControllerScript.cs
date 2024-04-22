@@ -21,6 +21,11 @@ public class SceneControllerScript : MonoBehaviour
         SceneManager.LoadScene("TestingScene");
     }
 
+    public void TutorialLevelScene()
+    {
+        SceneManager.LoadScene("TutorialLevel");
+    }
+
     public void Level01Scene()
     {
         SceneManager.LoadScene("Level01");
