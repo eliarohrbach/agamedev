@@ -3,30 +3,29 @@ using UnityEngine;
 
 namespace Enemy
 {
-    [RequireComponent(typeof(Collider))]
+    [RequireComponent(typeof(Collider), typeof(EnemyAIController))]
     public class EnemyHealthController : MonoBehaviour, IDamageable
     {
 
         private ParticleSystem deathEffect;
         private GameObject whitebox;
-        private GameObject gun;
         private AudioSource deathSound;
+        private EnemyAIController enemyAIController;
 
         private void Awake()
         {
             deathEffect = transform.Find("DeathEffect")?.GetComponent<ParticleSystem>();
+            enemyAIController = GetComponent<EnemyAIController>();
             whitebox = transform.Find("Whitebox")?.gameObject;
-            gun = transform.Find("Gun")?.gameObject;
             deathSound = GetComponent<AudioSource>();
         }
 
         public void ApplyDamage()
         {
+            enemyAIController.enabled = false;
+            
             if (whitebox != null)
                 Destroy(whitebox);
-
-            if (gun != null)
-                Destroy(gun);
 
             if (deathEffect && !deathEffect.isPlaying)
                 deathEffect.Play();
