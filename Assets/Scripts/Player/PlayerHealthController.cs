@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using Gun;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -10,14 +11,20 @@ namespace Player
     public class PlayerHealthController : MonoBehaviour, IDamageable
     {
         public bool invulnerable = false;
+        private bool _isDead;
+
+        private void OnEnable()
+        {
+            _isDead = false;
+        }
+
         public event Action OnDeath = delegate { };
-        private bool isDead = false;
 
         public void ApplyDamage()
         {
-            if (!invulnerable && !isDead)
+            if (!invulnerable && !_isDead)
             {
-                isDead = true;
+                _isDead = true;
                 OnDeath.Invoke();
                 StartCoroutine(DeathAnimation());
             }

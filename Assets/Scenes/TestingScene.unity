@@ -1133,7 +1133,7 @@ PrefabInstance:
       objectReference: {fileID: 7151279759605152604}
     - target: {fileID: 551144939070511608, guid: ecb81e7cd952b894696741a5c57332bc, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Level01Scene
+      value: TutorialLevelScene
       objectReference: {fileID: 0}
     - target: {fileID: 551144939070511608, guid: ecb81e7cd952b894696741a5c57332bc, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
