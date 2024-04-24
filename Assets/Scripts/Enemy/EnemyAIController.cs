@@ -15,7 +15,7 @@ namespace Enemy
         FINAL_RETURNING
     }
 
-    [RequireComponent(typeof(NavMeshAgentWithObstacle))]
+    [RequireComponent(typeof(NavMeshAgentWithObstacle), typeof(EnemyHealthController))]
     public class EnemyAIController : MonoBehaviour
     {
         public float rotationSpeed = 5;
@@ -31,17 +31,24 @@ namespace Enemy
         public Transform[] patrolPath;
         private int _currentPatrolIndex;
         private bool _isPatrolling;
+        private EnemyHealthController _healthController;
 
         private void Awake()
         {
             _navMeshAgent = GetComponent<NavMeshAgentWithObstacle>();
             _navMeshAgent.OnNavEnded += OnNavReached;
             _players = GameObject.FindGameObjectsWithTag("Player");
+            _healthController = GetComponent<EnemyHealthController>();
         }
 
         private void Start()
         {
             _startingPosition = transform.position;
+        }
+
+        private void OnEnable()
+        {
+            _healthController.OnDeath += OnDeath;
         }
 
         void OnDisable()
@@ -50,6 +57,12 @@ namespace Enemy
             _searchState = SearchState.NONE;
             _currentPatrolIndex = 0;
             _isPatrolling = false;
+            _healthController.OnDeath -= OnDeath;
+        }
+        
+        private void OnDeath()
+        {
+            enabled = false;
         }
 
         void Update()

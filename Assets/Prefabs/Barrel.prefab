@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8977139216126808604}
   m_Layer: 0
-  m_Name: Model
+  m_Name: Whitebox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 6852532552794225528}
   m_Layer: 0
   m_Name: Barrel
-  m_TagString: Untagged
+  m_TagString: Barrel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -57,8 +57,8 @@ Transform:
   m_GameObject: {fileID: 2479851889032762317}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 415.19, y: 0.7, z: 411.94}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 415.19, y: 0, z: 411.94}
+  m_LocalScale: {x: 1, y: 0.7, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8977139216126808604}
@@ -74,7 +74,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2919252522411803853}
   m_Layer: 0
-  m_Name: Whitebox
+  m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -107,7 +107,7 @@ GameObject:
   - component: {fileID: 1537432772444586558}
   - component: {fileID: 2831050192675691597}
   - component: {fileID: 3907094129982322402}
-  - component: {fileID: 6658096339354703894}
+  - component: {fileID: 8759050509737988115}
   m_Layer: 0
   m_Name: Cylinder
   m_TagString: Untagged
@@ -124,8 +124,8 @@ Transform:
   m_GameObject: {fileID: 7194494978691850354}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.7, z: 0}
-  m_LocalScale: {x: 1, y: 0.7, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2919252522411803853}
@@ -180,7 +180,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &6658096339354703894
+--- !u!64 &8759050509737988115
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
