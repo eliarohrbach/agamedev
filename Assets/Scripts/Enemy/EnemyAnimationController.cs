@@ -18,15 +18,22 @@ namespace Enemy
 
         private void OnEnable()
         {
+            _enemyAIController.gun.OnFire += TriggerShoot;
         }
 
         private void OnDisable()
         {
+            _enemyAIController.gun.OnFire -= TriggerShoot;
         }
 
         void Update()
         {
             animator.SetFloat("speed", _navMeshAgentWithObstacle.Velocity > 1 ? 1 : 0);
+        }
+
+        private void TriggerShoot()
+        {
+         animator.SetTrigger("fire");   
         }
     }
 }

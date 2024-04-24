@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using UnityEngine;
 
 namespace Gun
@@ -15,6 +16,8 @@ namespace Gun
         public AudioClip gunCooldownReadyAudioClip;
         private AudioSource _audioSource;
 
+        public Action OnFire = delegate { };
+
         private void Awake()
         {
             _timeOfLastShot = GetTime();
@@ -30,6 +33,7 @@ namespace Gun
                 _timeOfLastShot = currentTime;
                 _audioSource.PlayOneShot(gunShotAudioClip);
                 StartCoroutine(PlayGunReadyAudioClip());
+                OnFire.Invoke();
             }
         }
 
