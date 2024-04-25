@@ -1,67 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &6769735566303141239
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 2585361772860743839}
-    m_Modifications:
-    - target: {fileID: 484562865447914759, guid: 7847a76957a5b4c449a18feae08f870d, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 484562865447914759, guid: 7847a76957a5b4c449a18feae08f870d, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 484562865447914759, guid: 7847a76957a5b4c449a18feae08f870d, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 484562865447914759, guid: 7847a76957a5b4c449a18feae08f870d, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 484562865447914759, guid: 7847a76957a5b4c449a18feae08f870d, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 484562865447914759, guid: 7847a76957a5b4c449a18feae08f870d, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 484562865447914759, guid: 7847a76957a5b4c449a18feae08f870d, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 484562865447914759, guid: 7847a76957a5b4c449a18feae08f870d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 484562865447914759, guid: 7847a76957a5b4c449a18feae08f870d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 484562865447914759, guid: 7847a76957a5b4c449a18feae08f870d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2414215821960019858, guid: 7847a76957a5b4c449a18feae08f870d, type: 3}
-      propertyPath: m_Name
-      value: DeathEffect
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 7847a76957a5b4c449a18feae08f870d, type: 3}
---- !u!4 &6578472603874087024 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 484562865447914759, guid: 7847a76957a5b4c449a18feae08f870d, type: 3}
-  m_PrefabInstance: {fileID: 6769735566303141239}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &9004976975481445351
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -126,10 +64,7 @@ PrefabInstance:
     - {fileID: 6658096339354703894, guid: 36da6f6aa3eb04d49bd54fc1d02a9819, type: 3}
     - {fileID: 8759050509737988115, guid: 36da6f6aa3eb04d49bd54fc1d02a9819, type: 3}
     m_RemovedGameObjects: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 6852532552794225528, guid: 36da6f6aa3eb04d49bd54fc1d02a9819, type: 3}
-      insertIndex: 0
-      addedObject: {fileID: 6578472603874087024}
+    m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 2479851889032762317, guid: 36da6f6aa3eb04d49bd54fc1d02a9819, type: 3}
       insertIndex: -1
@@ -141,11 +76,6 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 6672998763367730335}
   m_SourcePrefab: {fileID: 100100000, guid: 36da6f6aa3eb04d49bd54fc1d02a9819, type: 3}
---- !u!4 &2585361772860743839 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6852532552794225528, guid: 36da6f6aa3eb04d49bd54fc1d02a9819, type: 3}
-  m_PrefabInstance: {fileID: 9004976975481445351}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &6814560855548856362 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2479851889032762317, guid: 36da6f6aa3eb04d49bd54fc1d02a9819, type: 3}
@@ -179,6 +109,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b9023e105fe462293853018ab634751, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deathEffect: {fileID: 2414215821960019858, guid: 7847a76957a5b4c449a18feae08f870d, type: 3}
 --- !u!64 &6672998763367730335
 MeshCollider:
   m_ObjectHideFlags: 0
