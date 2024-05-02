@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -5,25 +6,31 @@ namespace Player
 {
     public class InputManager : MonoBehaviour
     {
-        public InputAction moveInput;
-        public InputAction cameraInput;
-        public InputAction jump;
-        public InputAction fire;
-        
+        public InputActionAsset actions;
+        private InputActionMap actionMap;
+        private InputAction moveInput;
+        private InputAction cameraInput;
+        private InputAction jump;
+        private InputAction fire;
+       
+
+        public void Awake()
+        {
+            actionMap = actions.FindActionMap("input");
+            moveInput = actionMap.FindAction("move");
+            cameraInput = actionMap.FindAction("camera");
+            jump = actionMap.FindAction("jump");
+            fire = actionMap.FindAction("fire");
+        }
+
         public void OnEnable()
         {
-            moveInput.Enable();
-            cameraInput.Enable();
-            jump.Enable();
-            fire.Enable();
+            actionMap.Enable();
         }
 
         public void OnDisable()
         {
-            moveInput.Disable();
-            cameraInput.Disable();
-            jump.Disable();
-            fire.Disable();
+          actionMap.Disable();
         }
         
         public Vector2 GetMovement()
