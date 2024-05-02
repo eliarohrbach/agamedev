@@ -39,11 +39,12 @@ namespace Player
         {
             if (!_isPaused)
             {
-                _yRotation += _inputManager.GetCameraY() * sensitivity;
+                var cameraInput = _inputManager.GetCamera();
+                _yRotation += cameraInput.y * sensitivity;
                 _yRotation = Mathf.Clamp(_yRotation, -yRotationLimit, yRotationLimit);
                 camera.transform.localRotation = Quaternion.AngleAxis(_yRotation, Vector3.left);
 
-                var xRotation = _inputManager.GetCameraX() * sensitivity;
+                var xRotation = cameraInput.x * sensitivity;
                 transform.rotation *= Quaternion.AngleAxis(xRotation, Vector3.up);
             }
         }

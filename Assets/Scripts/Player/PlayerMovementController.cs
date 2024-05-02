@@ -43,8 +43,9 @@ namespace Player
         {
             if (!_isPaused)
             {
-                var forward = transform.forward * _inputManager.GetMovementVertical();
-                var right = transform.right * _inputManager.GetMovementHorizontal();
+                var movementInput = _inputManager.GetMovement();
+                var forward = transform.forward * movementInput.y;
+                var right = transform.right * movementInput.x;
                 var groundDirection = (forward + right).normalized * (speed + _currentAcceleration);
                 if (_characterController.isGrounded)
                 {
