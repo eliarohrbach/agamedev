@@ -9,7 +9,7 @@ namespace Player
     [RequireComponent(typeof(InputManager), typeof(PlayerHealthController))]
     public class PlayerGunController : MonoBehaviour
     {
-        public GunController gun;
+        public GunControllerPlayer gun;
         private InputManager _inputManager;
         private bool _isPaused;
         private PlayerHealthController _healthController;
@@ -18,6 +18,7 @@ namespace Player
         {
             _inputManager = GetComponent<InputManager>();
             _healthController = GetComponent<PlayerHealthController>();
+
         }
 
         private void OnEnable()
@@ -42,6 +43,7 @@ namespace Player
             if (!_isPaused && _inputManager.GetFireGun())
             {
                 gun.Fire();
+
             }
         }
     }

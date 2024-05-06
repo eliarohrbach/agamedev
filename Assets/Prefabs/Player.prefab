@@ -281,7 +281,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6905618581423292134}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0cebab4230e7858459f6bdf59adf7b8a, type: 3}
   m_Name: 
@@ -310,7 +310,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6905618581423292134}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 450c549417e127545805168b21301efb, type: 3}
   m_Name: 
@@ -325,7 +325,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6905618581423292134}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c91d2a51885247bfb0ee77add66b549f, type: 3}
   m_Name: 
@@ -368,6 +368,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 644346085478126271}
     m_Modifications:
+    - target: {fileID: 326678792384415171, guid: 8399ac8ce402c2d4793e9e267bd85600, type: 3}
+      propertyPath: magazin
+      value: 
+      objectReference: {fileID: 11400000, guid: c0344baba2000c540a1252ba67f6dd1d, type: 2}
     - target: {fileID: 326678792384415171, guid: 8399ac8ce402c2d4793e9e267bd85600, type: 3}
       propertyPath: useUnscaledTime
       value: 1

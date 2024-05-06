@@ -215,10 +215,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: UI
       objectReference: {fileID: 0}
-    - target: {fileID: 4699970020354423926, guid: c708573cb685fcc4c97acf8881c242a1, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -790,10 +786,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 416205236968008410, guid: d00a5dc90cbf3674393da9c0101b9b84, type: 3}
-      propertyPath: m_WarningMessage
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 2164316820718988994, guid: d00a5dc90cbf3674393da9c0101b9b84, type: 3}
       propertyPath: m_Name
       value: Enemy (1)
@@ -805,14 +797,6 @@ PrefabInstance:
     - target: {fileID: 2164316820718988994, guid: d00a5dc90cbf3674393da9c0101b9b84, type: 3}
       propertyPath: m_TagString
       value: Enemy
-      objectReference: {fileID: 0}
-    - target: {fileID: 3215223456133028382, guid: d00a5dc90cbf3674393da9c0101b9b84, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3215223456133028382, guid: d00a5dc90cbf3674393da9c0101b9b84, type: 3}
-      propertyPath: patrolPath.Array.size
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3215223456133028382, guid: d00a5dc90cbf3674393da9c0101b9b84, type: 3}
       propertyPath: patrolPath.Array.data[0]
@@ -879,14 +863,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 856724915046524370, guid: c485cd7641d6f1d4a81649be4a681d82, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
+    - target: {fileID: 1361300171902981859, guid: c485cd7641d6f1d4a81649be4a681d82, type: 3}
+      propertyPath: bulletCount
+      value: 
+      objectReference: {fileID: 11400000, guid: 9af25c22748fdb34fb35c4cbfeb84a73, type: 2}
+    - target: {fileID: 1361300171902981859, guid: c485cd7641d6f1d4a81649be4a681d82, type: 3}
+      propertyPath: _bulletCounter
+      value: 
+      objectReference: {fileID: 1634210878}
+    - target: {fileID: 1361300171902981859, guid: c485cd7641d6f1d4a81649be4a681d82, type: 3}
+      propertyPath: pistoleMagazin
+      value: 
+      objectReference: {fileID: 11400000, guid: 9af25c22748fdb34fb35c4cbfeb84a73, type: 2}
     - target: {fileID: 1529406637066801256, guid: c485cd7641d6f1d4a81649be4a681d82, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
+      propertyPath: _bulletCounter
+      value: 
+      objectReference: {fileID: 1634210878}
+    - target: {fileID: 1529406637066801256, guid: c485cd7641d6f1d4a81649be4a681d82, type: 3}
+      propertyPath: pistoleMagazin
+      value: 
+      objectReference: {fileID: 11400000, guid: c0344baba2000c540a1252ba67f6dd1d, type: 2}
     - target: {fileID: 4444035687591678577, guid: c485cd7641d6f1d4a81649be4a681d82, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -930,10 +926,6 @@ PrefabInstance:
     - target: {fileID: 5141281088466441993, guid: c485cd7641d6f1d4a81649be4a681d82, type: 3}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 5998513981063172783, guid: c485cd7641d6f1d4a81649be4a681d82, type: 3}
-      propertyPath: m_Enabled
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6905618581423292134, guid: c485cd7641d6f1d4a81649be4a681d82, type: 3}
       propertyPath: m_Name
@@ -982,6 +974,11 @@ Transform:
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2164316820718988994, guid: d00a5dc90cbf3674393da9c0101b9b84, type: 3}
   m_PrefabInstance: {fileID: 767429625}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1634210878 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 184080919118122180, guid: c708573cb685fcc4c97acf8881c242a1, type: 3}
+  m_PrefabInstance: {fileID: 91316622}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1846899727 stripped
 GameObject:

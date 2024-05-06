@@ -634,6 +634,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1361300171902981859, guid: c485cd7641d6f1d4a81649be4a681d82, type: 3}
+      propertyPath: _bulletCounter
+      value: 
+      objectReference: {fileID: 1981938539}
     - target: {fileID: 1529406637066801256, guid: c485cd7641d6f1d4a81649be4a681d82, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -3576,6 +3580,11 @@ PrefabInstance:
 --- !u!1 &1981938538 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4699970020354423926, guid: c708573cb685fcc4c97acf8881c242a1, type: 3}
+  m_PrefabInstance: {fileID: 1981938537}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1981938539 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 184080919118122180, guid: c708573cb685fcc4c97acf8881c242a1, type: 3}
   m_PrefabInstance: {fileID: 1981938537}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &2067705336

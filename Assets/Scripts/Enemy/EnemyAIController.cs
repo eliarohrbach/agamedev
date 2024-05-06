@@ -21,7 +21,7 @@ namespace Enemy
         public float rotationSpeed = 5;
         public float fov = 180;
         public float automaticDetectionRadius = 4;
-        public GunController gun;
+        public GunControllerEnemy gun;
         private GameObject _target;
         private GameObject[] _players;
         private NavMeshAgentWithObstacle _navMeshAgent;

@@ -1,11 +1,11 @@
-﻿using System;
+using System;
 using System.Collections;
 using UnityEngine;
 
 namespace Gun
 {
     [RequireComponent(typeof(AudioSource))]
-    public class GunController : MonoBehaviour
+    public class GunControllerEnemy : MonoBehaviour
     {
         public Transform bulletSpawnPoint;
         public GameObject bulletPrefab;
