@@ -38,6 +38,7 @@ namespace Gun
                 StartCoroutine(PlayGunReadyAudioClip());
                 OnFire.Invoke();
 
+                magazin.bulletCount--;
                 _bulletCounter.GetComponent<BulletCounterTextScript>().changeCounter();
             }
         }

@@ -51,7 +51,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pistoleMagazin: {fileID: 11400000, guid: c0344baba2000c540a1252ba67f6dd1d, type: 2}
-  bulletCounter: {fileID: 1891104606368903923}
+  ui: {fileID: 4699970020354423926}
 --- !u!222 &3167663589092092491
 CanvasRenderer:
   m_ObjectHideFlags: 0

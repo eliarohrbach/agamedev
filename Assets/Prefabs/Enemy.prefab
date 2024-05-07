@@ -108,6 +108,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deathEffect: {fileID: 2414215821960019858, guid: 7847a76957a5b4c449a18feae08f870d, type: 3}
+  ammunition: {fileID: 8403941127963081326, guid: d6f42927459e1c14385c1553dfc831e6, type: 3}
 --- !u!114 &3215223456133028382
 MonoBehaviour:
   m_ObjectHideFlags: 0

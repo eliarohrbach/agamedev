@@ -8,6 +8,7 @@ namespace Enemy
     public class EnemyHealthController : MonoBehaviour, IDamageable
     {
         public GameObject deathEffect;
+        public GameObject ammunition;
         private bool isDead = false;
         
         public event Action OnDeath = delegate { };
@@ -27,6 +28,10 @@ namespace Enemy
                 if (deathEffect is not null)
                 {
                     Instantiate(deathEffect, transform.position, transform.rotation);
+                    if (ammunition != null)
+                    {
+                        Instantiate(ammunition, transform.position, transform.rotation);
+                    }
                 }
                 Destroy(gameObject);
             }
