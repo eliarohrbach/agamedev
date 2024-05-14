@@ -7846,8 +7846,19 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    - target: {fileID: 7868247448350558569, guid: ecb81e7cd952b894696741a5c57332bc, type: 3}
+      propertyPath: levelStartUI
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7868247448350558569, guid: ecb81e7cd952b894696741a5c57332bc, type: 3}
+      propertyPath: levelCompleteUI
+      value: 
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 7868247448350558569, guid: ecb81e7cd952b894696741a5c57332bc, type: 3}
+    m_RemovedGameObjects:
+    - {fileID: 4686801912711285160, guid: ecb81e7cd952b894696741a5c57332bc, type: 3}
+    - {fileID: 6029363673687571367, guid: ecb81e7cd952b894696741a5c57332bc, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ecb81e7cd952b894696741a5c57332bc, type: 3}

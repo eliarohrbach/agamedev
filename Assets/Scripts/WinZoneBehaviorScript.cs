@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class WinZoneBehavior : MonoBehaviour
 {
-    [SerializeField] Material activeMaterial;
-    [SerializeField] Material inactiveMaterial;
+    [SerializeField] Material activeMaterial;       // green
+    [SerializeField] Material inactiveMaterial;     // red
     
     public bool endZoneOpen;
     public bool endLevel;
@@ -21,7 +21,7 @@ public class WinZoneBehavior : MonoBehaviour
         endZoneOpen = false;
         endLevel = false;
         enemyAlive = true;
-        _render = GetComponent<MeshRenderer>();
+        _render = GetComponent<MeshRenderer>(); // Get the MeshRenderer Component to change the color
     }
 
     // Update is called once per frame
@@ -29,6 +29,7 @@ public class WinZoneBehavior : MonoBehaviour
     {
         EnemyDetection();
 
+        // Opens the WinZone if there are no enemies alive
         if (!enemyAlive)
         {
             endZoneOpen = true;
@@ -38,6 +39,7 @@ public class WinZoneBehavior : MonoBehaviour
             endZoneOpen = false;
         }
 
+        // Changes the color of the WinZone when it is open
         if (endZoneOpen)
         {
             _render.material = activeMaterial;
@@ -49,6 +51,7 @@ public class WinZoneBehavior : MonoBehaviour
 
     }
 
+    // Method to check if there are still enemies around
     void EnemyDetection()
     {
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
@@ -63,6 +66,8 @@ public class WinZoneBehavior : MonoBehaviour
         }
     }
 
+    // Trigger that activates when the level is successfully completed
+    // The variable endLevel is used in the LevelContoller Script to avtivate the LevelComplete Menu
     public void OnTriggerEnter(Collider other)
     {
         if (endZoneOpen)
