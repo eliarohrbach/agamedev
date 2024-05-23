@@ -68,6 +68,7 @@ namespace Enemy
         {
             Debug.Log("set dest");
             _obstacle.enabled = false;
+            IsStopped = false;
 
             _lastMoveTime = Time.time;
             _lastPosition = transform.position;

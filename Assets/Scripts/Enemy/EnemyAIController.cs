@@ -15,17 +15,32 @@ namespace Enemy
         FINAL_RETURNING
     }
 
+    public enum AiState
+    {
+        Waiting,
+        Firing,
+        Chasing,
+        Searching,
+        Patrolling
+    }
+
+    /// <summary>
+    /// Author: Alexander Wyss
+    /// </summary>
     [RequireComponent(typeof(NavMeshAgentWithObstacle), typeof(EnemyHealthController))]
     public class EnemyAIController : MonoBehaviour
     {
+        public GameObject[] PossibleTargets { get; private set; }
+
+        public NavMeshAgentWithObstacle NavMeshAgent { get; private set; }
+        public Vector3 StartingPosition { get; private set; }
+
         public float rotationSpeed = 5;
         public float fov = 180;
         public float automaticDetectionRadius = 4;
         public GunControllerEnemy gun;
         private GameObject _target;
         private GameObject[] _players;
-        private NavMeshAgentWithObstacle _navMeshAgent;
-        private Vector3 _startingPosition;
         private SearchState _searchState = SearchState.NONE;
         private Quaternion _searchStartingRotation;
         public Transform[] patrolPath;
@@ -35,15 +50,16 @@ namespace Enemy
 
         private void Awake()
         {
-            _navMeshAgent = GetComponent<NavMeshAgentWithObstacle>();
-            _navMeshAgent.OnNavEnded += OnNavReached;
-            _players = GameObject.FindGameObjectsWithTag("Player");
+            NavMeshAgent = GetComponent<NavMeshAgentWithObstacle>();
+            PossibleTargets = GameObject.FindGameObjectsWithTag("Player");
+            
+            NavMeshAgent.OnNavEnded += OnNavReached;
             _healthController = GetComponent<EnemyHealthController>();
         }
 
         private void Start()
         {
-            _startingPosition = transform.position;
+            StartingPosition = transform.position;
         }
 
         private void OnEnable()
@@ -59,7 +75,7 @@ namespace Enemy
             _isPatrolling = false;
             _healthController.OnDeath -= OnDeath;
         }
-        
+
         private void OnDeath()
         {
             enabled = false;
@@ -90,9 +106,9 @@ namespace Enemy
                         else
                         {
                             _searchState = SearchState.NONE;
-                            if (Vector3.Distance(_startingPosition, transform.position) > 3)
+                            if (Vector3.Distance(StartingPosition, transform.position) > 3)
                             {
-                                SetNavDestination(_startingPosition);
+                                SetNavDestination(StartingPosition);
                             }
                         }
                     }
@@ -124,7 +140,7 @@ namespace Enemy
                     if (CanSee(player))
                     {
                         _target = player;
-                        _navMeshAgent.IsStopped = true;
+                        NavMeshAgent.IsStopped = true;
                         _searchState = SearchState.NONE;
                         Debug.Log("Player Detected!");
                         break;
@@ -140,7 +156,7 @@ namespace Enemy
                     RotateTowards(targetLookRotation);
                     if (Quaternion.Angle(transform.rotation, targetLookRotation) < 1)
                     {
-                        gun.Fire();
+                        Fire();
                     }
                 }
                 else
@@ -152,10 +168,15 @@ namespace Enemy
             }
         }
 
-        private void SetNavDestination(Vector3 target)
+        public void Fire()
         {
-            _navMeshAgent.SetDestination(target);
-            _navMeshAgent.IsStopped = false;
+            gun.Fire();
+        }
+
+        public void SetNavDestination(Vector3 target)
+        {
+            NavMeshAgent.SetDestination(target);
+            NavMeshAgent.IsStopped = false;
         }
 
         private void OnNavReached()
@@ -172,7 +193,7 @@ namespace Enemy
             return startingRotation * rotation;
         }
 
-        private bool CanSee(GameObject target)
+        public bool CanSee(GameObject target)
         {
             var targetDirection = target.transform.position - transform.position;
 
@@ -196,7 +217,7 @@ namespace Enemy
             return false;
         }
 
-        private void RotateTowards(Quaternion rotation)
+        public void RotateTowards(Quaternion rotation)
         {
             transform.rotation = Quaternion.Slerp(transform.rotation, rotation, rotationSpeed * Time.deltaTime);
         }
@@ -206,6 +227,20 @@ namespace Enemy
             var direction = target - transform.position;
             direction.y = 0;
             return Quaternion.LookRotation(direction);
+        }
+
+        public GameObject CheckForTargetInSight()
+        {
+            foreach (var target in PossibleTargets)
+            {
+                if (CanSee(target))
+                {
+                    Debug.Log("Player Detected!");
+                    return target;
+                }
+            }
+
+            return null;
         }
     }
 }
