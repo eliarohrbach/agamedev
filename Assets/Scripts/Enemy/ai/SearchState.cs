@@ -65,12 +65,7 @@ namespace Enemy.ai
                     }
                     else
                     {
-                        if (Vector3.Distance(enemyController.StartingPosition, enemyController.transform.position) > 3)
-                        {
-                            return new ChaseState(enemyController, enemyController.StartingPosition);
-                        }
-
-                        return new WaitState(enemyController);
+                        return enemyController.DefaultState();
                     }
                 }
             }

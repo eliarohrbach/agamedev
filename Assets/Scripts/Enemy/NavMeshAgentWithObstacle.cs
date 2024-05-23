@@ -53,14 +53,15 @@ namespace Enemy
 
             if (_lastMoveTime + _obstacle.carvingTimeToStationary < Time.time)
             {
+                _agent.enabled = false;
+                _obstacle.enabled = true;
+                
                 if (_destination is not null)
                 {
                     OnNavEnded.Invoke();
                     _destination = null;
                 }
 
-                _agent.enabled = false;
-                _obstacle.enabled = true;
             }
         }
 
