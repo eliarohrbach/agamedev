@@ -13,7 +13,6 @@ namespace Enemy.ai
 
         public void Start()
         {
-            
         }
 
         public IState Update()

@@ -27,11 +27,15 @@ namespace Enemy.ai
             var possibleTarget = enemyController.CheckForTargetInSight();
             if (possibleTarget is not null)
             {
+                enemyController.NavMeshAgent.OnNavEnded -= OnNavEnded;
+                enemyController.NavMeshAgent.IsStopped = true;
                 return new AttackState(enemyController, possibleTarget);
             }
 
             if (navEnded)
             {
+                
+                enemyController.NavMeshAgent.IsStopped = true;
                 return new SearchState(enemyController);
             }
             return this;
