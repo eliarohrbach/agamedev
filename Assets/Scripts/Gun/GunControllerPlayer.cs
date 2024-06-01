@@ -12,7 +12,7 @@ namespace Gun
         public Transform bulletSpawnPoint;
         public GameObject bulletPrefab;
         public float cooldownSeconds = 1;
-        private float _timeOfLastShot;
+        public float _timeOfLastShot;
         public bool useUnscaledTime;
         public AudioClip gunShotAudioClip;
         public AudioClip gunCooldownReadyAudioClip;

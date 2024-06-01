@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1449,6 +1449,19 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6905618581423292134, guid: c485cd7641d6f1d4a81649be4a681d82, type: 3}
   m_PrefabInstance: {fileID: 2142678400}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &948827989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 948827988}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 214897a81607543d38a5055b3e3b3628, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Gun: {fileID: 2142678401}
 --- !u!1 &1188991512
 GameObject:
   m_ObjectHideFlags: 0
@@ -3454,6 +3467,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 63011920131531857, guid: c485cd7641d6f1d4a81649be4a681d82, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1361300171902981859, guid: c485cd7641d6f1d4a81649be4a681d82, type: 3}
       propertyPath: _bulletCounter
       value: 
@@ -3498,6 +3515,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6665959320770844456, guid: c485cd7641d6f1d4a81649be4a681d82, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 6905618581423292134, guid: c485cd7641d6f1d4a81649be4a681d82, type: 3}
       propertyPath: m_Name
       value: Player
@@ -3505,8 +3526,40 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6905618581423292134, guid: c485cd7641d6f1d4a81649be4a681d82, type: 3}
+      insertIndex: 3
+      addedObject: {fileID: 948827989}
+    - targetCorrespondingSourceObject: {fileID: 7835298254645522327, guid: c485cd7641d6f1d4a81649be4a681d82, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2142678402}
   m_SourcePrefab: {fileID: 100100000, guid: c485cd7641d6f1d4a81649be4a681d82, type: 3}
+--- !u!1 &2142678401 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7835298254645522327, guid: c485cd7641d6f1d4a81649be4a681d82, type: 3}
+  m_PrefabInstance: {fileID: 2142678400}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &2142678402
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2142678401}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 58c779ca127a7410e8f852133f617f5c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
