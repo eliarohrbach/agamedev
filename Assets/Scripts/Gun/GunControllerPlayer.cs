@@ -20,6 +20,8 @@ namespace Gun
 
         public Action OnFire = delegate { };
 
+        public ParticleSystem muzzleFlash;
+
         private void Awake()
         {
             _timeOfLastShot = GetTime();
@@ -37,6 +39,11 @@ namespace Gun
                 _audioSource.PlayOneShot(gunShotAudioClip);
                 StartCoroutine(PlayGunReadyAudioClip());
                 OnFire.Invoke();
+
+                if (muzzleFlash != null)
+                {
+                    muzzleFlash.Play();
+                }
 
                 magazin.bulletCount--;
                 _bulletCounter.GetComponent<BulletCounterTextScript>().changeCounter();

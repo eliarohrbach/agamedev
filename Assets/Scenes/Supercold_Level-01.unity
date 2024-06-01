@@ -338,6 +338,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4699970020354423926, guid: c708573cb685fcc4c97acf8881c242a1, type: 3}
   m_PrefabInstance: {fileID: 1805872443}
   m_PrefabAsset: {fileID: 0}
+--- !u!198 &132442510 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 9128252441220134963, guid: c485cd7641d6f1d4a81649be4a681d82, type: 3}
+  m_PrefabInstance: {fileID: 2142678400}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &185671082
 GameObject:
   m_ObjectHideFlags: 0
@@ -3471,6 +3476,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1361300171902981859, guid: c485cd7641d6f1d4a81649be4a681d82, type: 3}
+      propertyPath: muzzleFlash
+      value: 
+      objectReference: {fileID: 132442510}
     - target: {fileID: 1361300171902981859, guid: c485cd7641d6f1d4a81649be4a681d82, type: 3}
       propertyPath: _bulletCounter
       value: 
