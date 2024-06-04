@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// written by Elia
+
 public class RecoilScript : MonoBehaviour
 {
     public GameObject Gun;
