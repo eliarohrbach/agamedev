@@ -1,13 +1,12 @@
-using System;
 using Player;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using static UnityEngine.Rendering.HighDefinition.ScalableSettingLevelParameter;
-using UnityEditor;
 
-// Script for controlling the Save- and WinZone
-// and for enabling and disabling the associated menus in a Level
+// written by Severin Landolt
+
+/// <summary>
+/// Class <c>LevelController</c> controlles the Save- and WinZone
+/// and for enabling and disabling the associated menus in a level
+/// </summary>
 public class LevelController : MonoBehaviour
 {
     [SerializeField] GameObject levelCompleteUI;    // UI menu displayed when the level is completed
@@ -37,7 +36,9 @@ public class LevelController : MonoBehaviour
         }
     }
 
-    // Method to activate the LevelComplete Menu and pause the game
+    /// <summary>
+    /// Method <c>EndLevel</c> activates the LevelComplete Menu and pause the game
+    /// </summary>
     void EndLevel()
     {
         levelCompleteUI.SetActive(true);
@@ -50,7 +51,7 @@ public class LevelController : MonoBehaviour
     }
 
     /// <summary>
-    /// Method to deactivate the StartScreen Menu and the SaveZone and start the game
+    /// Method <c>GameStart</c> deactivates the StartScreen Menu and the SaveZone and start the game
     /// </summary>
     public void GameStart()
     {

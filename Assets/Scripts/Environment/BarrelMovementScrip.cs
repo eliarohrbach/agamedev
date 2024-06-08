@@ -1,7 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
+// written by Severin Landolt
+
+/// <summary>
+/// Class <c>BarrelMovementScrip</c> controlles the behaviour of the moving
+/// barrels in the turorial level
+/// </summary>
 public class BarrelMovementScrip : MonoBehaviour
 {
     [SerializeField] float dictance;
@@ -39,6 +43,9 @@ public class BarrelMovementScrip : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Method <c>MoveForward</c> moves the barrel forward
+    /// </summary>
     private void MoveForward()
     {
         transform.position = Vector3.MoveTowards(transform.position, endPosition, speed * Time.deltaTime);
