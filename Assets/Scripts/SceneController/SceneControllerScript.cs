@@ -30,10 +30,16 @@ public class SceneControllerScript : MonoBehaviour
         SceneManager.LoadScene("TutorialLevel");
     }
 
-    // Loads the Level01 Scene
+    // Loads the Supercold_Level-01 Scene
     public void Level01Scene()
     {
-        SceneManager.LoadScene("Level01");
+        SceneManager.LoadScene("Supercold_Level-01");
+    }
+
+    // Loads the Supercold_Level-02 Scene
+    public void Level02Scene()
+    {
+        SceneManager.LoadScene("Supercold_Level-02");
     }
 
     // Closes the game 

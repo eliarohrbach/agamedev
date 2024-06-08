@@ -15,7 +15,6 @@ public class WinZoneBehavior : MonoBehaviour
     private MeshRenderer _render;
 
 
-    // Start is called before the first frame update
     void Start()
     {
         endZoneOpen = false;
@@ -24,7 +23,6 @@ public class WinZoneBehavior : MonoBehaviour
         _render = GetComponent<MeshRenderer>(); // Get the MeshRenderer Component to change the color
     }
 
-    // Update is called once per frame
     void Update()
     {
         EnemyDetection();

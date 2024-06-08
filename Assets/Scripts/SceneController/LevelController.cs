@@ -49,7 +49,9 @@ public class LevelController : MonoBehaviour
         levelCompleteUI.GetComponent<Animator>().SetTrigger("Start");
     }
 
-    // Method to deactivate the StartScreen Menu and the SaveZone and start the game
+    /// <summary>
+    /// Method to deactivate the StartScreen Menu and the SaveZone and start the game
+    /// </summary>
     public void GameStart()
     {
         levelStartUI.SetActive(false);
