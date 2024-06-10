@@ -1,8 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
+// written by Severin Landolt
+
+/// <summary>
+/// Class <c>BulletCounterTextScript</c> controlles the bullet counter in the UI
+/// </summary>
 public class BulletCounterTextScript : MonoBehaviour
 {
     [SerializeField] PistoleMagazin pistoleMagazin;
@@ -15,7 +18,9 @@ public class BulletCounterTextScript : MonoBehaviour
         bulletCounter.text = pistoleMagazin.bulletCount + " / " + pistoleMagazin.maxBullet;
     }
 
-    // Method to update the UI Bullet Counter
+    /// <summary>
+    /// Method <c>changeCounter</c> updates the UI Bullet Counter
+    /// </summary>
     public void changeCounter()
     {
         bulletCounter.text = pistoleMagazin.bulletCount + " / " + pistoleMagazin.maxBullet;

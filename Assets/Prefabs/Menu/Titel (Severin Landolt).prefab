@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 998610765831636867}
   - component: {fileID: 847772822098393027}
   m_Layer: 0
-  m_Name: Text
+  m_Name: Titel (Severin Landolt)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -92,8 +92,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 5
-  m_fontSizeBase: 5
+  m_fontSize: 10
+  m_fontSizeBase: 10
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

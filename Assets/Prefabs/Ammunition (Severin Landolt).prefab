@@ -243,7 +243,7 @@ GameObject:
   - component: {fileID: 6218777152303420402}
   - component: {fileID: 387418201220332203}
   m_Layer: 0
-  m_Name: Ammunition
+  m_Name: Ammunition (Severin Landolt)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

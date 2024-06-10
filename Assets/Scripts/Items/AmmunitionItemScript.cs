@@ -1,11 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
+
+// written by Severin Landolt
 
 namespace Items
 {
     [RequireComponent(typeof(Collider))]
+
+    /// <summary>
+    /// Class <c>AmmunitionItemScript</c> controlles the behaviour of the ammunition item
+    /// </summary>
     public class AmmunitionItemScript : MonoBehaviour
     {
         [SerializeField] PistoleMagazin pistoleMagazin;
@@ -16,7 +19,6 @@ namespace Items
         public int maxRange;
         public int minRange;
 
-        // Start is called before the first frame update
         void Start()
         {
 
@@ -31,7 +33,6 @@ namespace Items
             ammunition = Random.Range(minRange, (maxRange + 1));
         }
 
-        // Update is called once per frame
         void Update()
         {
             // The ammunition Item rotates around its own axis

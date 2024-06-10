@@ -1,6 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+
+// written by Severin Landolt
 
 // ScriptableObject that stores the current available number of bullets
 // and the maximum possible number of bullets

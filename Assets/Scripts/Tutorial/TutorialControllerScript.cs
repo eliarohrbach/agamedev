@@ -1,8 +1,11 @@
 using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
+// written by Severin Landolt
+
+/// <summary>
+/// Class <c>TutorialControllerScript</c> controlles the Tutorial instructions
+/// </summary>
 public class TutorialControllerScript : MonoBehaviour
 {
     [SerializeField] GameObject Panel01;
@@ -41,8 +44,10 @@ public class TutorialControllerScript : MonoBehaviour
         }
     }
 
-
-
+    /// <summary>
+    /// Coroutine <c>WaitForSeconds</c> waits for a defined time before the
+    /// further code is executed
+    /// </summary>
     IEnumerator WaitForSeconds(float seconds)
     {
         yield return new WaitForSeconds(seconds);

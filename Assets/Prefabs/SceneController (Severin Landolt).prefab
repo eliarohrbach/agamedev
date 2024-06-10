@@ -284,7 +284,7 @@ GameObject:
   - component: {fileID: 5249861857196475336}
   - component: {fileID: 7868247448350558569}
   m_Layer: 0
-  m_Name: SceneController
+  m_Name: SceneController (Severin Landolt)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

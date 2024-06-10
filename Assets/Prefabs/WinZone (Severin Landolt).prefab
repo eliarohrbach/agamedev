@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5071660148031400790}
   - component: {fileID: 8627477256155883328}
   m_Layer: 0
-  m_Name: WinZone
+  m_Name: WinZone (Severin Landolt)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -1,8 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
+// written by Severin Landolt
+
+/// <summary>
+/// Class <c>WinZoneBehavior</c> activates the GameObject WinZone when
+/// all enemies have been defeated
+/// </summary>
 public class WinZoneBehavior : MonoBehaviour
 {
     [SerializeField] Material activeMaterial;       // green
@@ -49,7 +52,9 @@ public class WinZoneBehavior : MonoBehaviour
 
     }
 
-    // Method to check if there are still enemies around
+    /// <summary>
+    /// Method <c>EnemyDetection</c> checks if there are still enemies around
+    /// </summary>
     void EnemyDetection()
     {
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
@@ -64,7 +69,7 @@ public class WinZoneBehavior : MonoBehaviour
         }
     }
 
-    // Trigger that activates when the level is successfully completed
+    // Trigger activates when the level is successfully completed
     // The variable endLevel is used in the LevelContoller Script to avtivate the LevelComplete Menu
     public void OnTriggerEnter(Collider other)
     {

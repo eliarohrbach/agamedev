@@ -1,8 +1,13 @@
 using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
+// written by Severin Landolt
+
+/// <summary>
+/// Class <c>InstructionPanel01TextScript</c> controlles the Instruction Panel 01
+/// in the Tutorial level
+/// </summary>
 public class InstructionPanel01TextScript : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI barrelCounterText;
@@ -42,6 +47,10 @@ public class InstructionPanel01TextScript : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Coroutine <c>WaitForSeconds</c> waits for a defined time before the
+    /// further code is executed
+    /// </summary>
     IEnumerator WaitForSeconds(float seconds)
     {
         yield return new WaitForSeconds(seconds);
