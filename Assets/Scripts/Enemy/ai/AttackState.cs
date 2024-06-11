@@ -2,6 +2,10 @@
 
 namespace Enemy.ai
 {
+    /// <summary>
+    /// Author: Alexander Wyss
+    /// This state tries to fire upon a defined target. If this is not possible it starts chasing the target.
+    /// </summary>
     public class AttackState : IState
     {
         private EnemyAIController enemyController;
@@ -15,12 +19,10 @@ namespace Enemy.ai
 
         public void Start()
         {
-            
         }
 
         public IState Update()
         {
-           
             if (enemyController.CanSee(target))
             {
                 var targetLookRotation = GetTargetLookRotation(target.transform.position);
@@ -29,12 +31,13 @@ namespace Enemy.ai
                 {
                     enemyController.Fire();
                 }
+
                 return this;
             }
 
             return new ChaseState(enemyController, target.transform.position);
         }
-        
+
         private Quaternion GetTargetLookRotation(Vector3 rotationTarget)
         {
             var direction = rotationTarget - enemyController.transform.position;

@@ -2,6 +2,11 @@
 
 namespace Enemy.ai
 {
+    /// <summary>
+    /// Author: Alexander Wyss
+    /// Stands still for a target to be in sight.
+    /// This is a default state.
+    /// </summary>
     public class WaitState : IState
     {
         private EnemyAIController enemyController;

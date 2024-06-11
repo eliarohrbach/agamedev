@@ -11,6 +11,11 @@ namespace Enemy.ai
         FINAL_RETURNING
     }
 
+    /// <summary>
+    /// Author: Alexander Wyss
+    /// Looks right, returns to start rotation, looks left and returns to start rotation. Attacking any target on sight.
+    /// If no target is found, returns to the default state.
+    /// </summary>
     public class SearchState : IState
     {
         private EnemyAIController enemyController;

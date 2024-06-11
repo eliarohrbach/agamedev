@@ -2,6 +2,11 @@
 
 namespace Enemy.ai
 {
+    /// <summary>
+    /// Author: Alexander Wyss
+    /// Follows the defined patrol points in a loop, attacking any target it can see.
+    /// This is a default state.
+    /// </summary>
     public class PatrolState : IState
     {
         private EnemyAIController enemyController;

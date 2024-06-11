@@ -4,6 +4,15 @@ using UnityEngine;
 
 namespace Enemy
 {
+    
+    /// <summary>
+    /// Author: Alexander Wyss
+    /// Ammunition Author: Severin Landolt
+    /// Sound Effect/Death Animation Author:  Martin Hoeger, Alexander Wyss
+    ///
+    /// Implements the interface IDamageable. This is called if a bullet hits a collider.
+    /// Destroys the enemy and initiates the death effect and ammunition drop.
+    /// </summary>
     [RequireComponent(typeof(Collider))]
     public class EnemyHealthController : MonoBehaviour, IDamageable
     {

@@ -3,6 +3,10 @@ using UnityEngine;
 
 namespace Enemy
 {
+    /// <summary>
+    /// Author: Alexander Wyss
+    /// The EnemyAnimationController is responsible for setting the correct variables in the animator.
+    /// </summary>
     [RequireComponent(typeof(EnemyAIController), typeof(NavMeshAgentWithObstacle))]
     public class EnemyAnimationController : MonoBehaviour
     {

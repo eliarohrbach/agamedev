@@ -3,6 +3,10 @@ using UnityEngine;
 
 namespace Enemy.ai
 {
+    /// <summary>
+    /// Author: Alexander Wyss
+    /// Walks to the defined last known location, attacking any target it can see. If the target destination is reached it changes to the search state.
+    /// </summary>
     public class ChaseState : IState
     {
         private EnemyAIController enemyController;
@@ -34,13 +38,13 @@ namespace Enemy.ai
 
             if (navEnded)
             {
-                
                 enemyController.NavMeshAgent.IsStopped = true;
                 return new SearchState(enemyController);
             }
+
             return this;
         }
-        
+
         private void OnNavEnded()
         {
             navEnded = true;

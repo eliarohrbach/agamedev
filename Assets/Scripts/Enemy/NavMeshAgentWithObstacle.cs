@@ -5,6 +5,11 @@ using UnityEngine.AI;
 
 namespace Enemy
 {
+    /// <summary>
+    /// Author: Alexander Wyss
+    /// NavMeshAgentWithObstacle combines a normal NavMeshAgent with a NavMeshObstacle.
+    /// Our enemies are a lot of the time sitting ducks. This improves the path finding of other enemies, during this time.
+    /// </summary>
     [RequireComponent(typeof(NavMeshAgent), typeof(NavMeshObstacle))]
     public class NavMeshAgentWithObstacle : MonoBehaviour
     {
@@ -14,6 +19,10 @@ namespace Enemy
         private float _lastMoveTime;
         private Vector3 _lastPosition;
         private Vector3? _destination;
+        
+        /// <summary>
+        /// Invoked when the current destination is reached.
+        /// </summary>
         public event Action OnNavEnded = delegate { };
 
         public bool IsStopped
@@ -30,6 +39,10 @@ namespace Enemy
 
         public float Velocity => _agent.enabled ? _agent.velocity.magnitude : 0;
 
+        /// <summary>
+        /// Initiate the NavMeshAgent and NavMeshObstacle.
+        /// Only one can be active at any time.
+        /// </summary>
         private void Awake()
         {
             _agent = GetComponent<NavMeshAgent>();
@@ -43,6 +56,12 @@ namespace Enemy
             _destination = null;
         }
 
+        
+        /// <summary>
+        /// Checks whether the enemy is still moving or not.
+        /// If it stopped moving the obstacle is enabled and the agent disabled.
+        /// If a destination is currently defined. OnNavEnded is invoked. 
+        /// </summary>
         private void Update()
         {
             if (Vector3.Distance(_lastPosition, transform.position) > _obstacle.carvingMoveThreshold)
@@ -65,6 +84,11 @@ namespace Enemy
             }
         }
 
+        /// <summary>
+        /// Sets the navigation destination.
+        /// Disables the obstacle, and enables the agent with MoveAgent. This is done in a coroutine so the obstacle and agent aren't both active in the same frame. 
+        /// </summary>
+        /// <param name="position"></param>
         public void SetDestination(Vector3 position)
         {
             Debug.Log("set dest");
