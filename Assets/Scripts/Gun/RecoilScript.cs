@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,14 +8,14 @@ using UnityEngine;
 public class RecoilScript : MonoBehaviour
 {
     public GameObject Gun;
-    private Gun.GunControllerPlayer gunControllerPlayer;
+    private Gun.GunController _gunController;
     private bool isRecoiling = false; // Track the recoil state
 
-    void Start()
+    private void Awake()
     {
         // Get the GunControllerPlayer component
-        gunControllerPlayer = Gun.GetComponent<Gun.GunControllerPlayer>();
-        if (gunControllerPlayer == null)
+        _gunController = Gun.GetComponent<Gun.GunController>();
+        if (_gunController == null)
         {
             Debug.LogError("No GunControllerPlayer script found on the Gun object.");
             enabled = false; // Disable this script if GunControllerPlayer is not found
@@ -22,30 +23,28 @@ public class RecoilScript : MonoBehaviour
         }
 
         // Ensure the magazin component is also set
-        if (gunControllerPlayer.magazin == null)
+        if (_gunController.magazin == null)
         {
             Debug.LogError("No PistoleMagazin component found in GunControllerPlayer.");
             enabled = false; // Disable this script if PistoleMagazin is not found
         }
     }
 
-    void Update()
+    private void OnEnable()
     {
-        if (Input.GetMouseButtonDown(0) && !isRecoiling)
+        _gunController.OnFire += TriggerRecoil;
+    }
+
+    private void OnDisable()
+    {
+        _gunController.OnFire -= TriggerRecoil;
+    }
+
+    private void TriggerRecoil()
+    {
+        if (!isRecoiling)
         {
-            if (gunControllerPlayer.magazin.bulletCount > 0)
-            {
-                // Check if the gun is ready to shoot again
-                float currentTime = gunControllerPlayer.useUnscaledTime ? Time.unscaledTime : Time.time;
-                if (currentTime > gunControllerPlayer.cooldownSeconds + gunControllerPlayer._timeOfLastShot)
-                {
-                    StartCoroutine(StartRecoil());
-                }
-            }
-            else
-            {
-                Debug.Log("No bullets left to fire.");
-            }
+            StartCoroutine(StartRecoil());
         }
     }
 
@@ -55,7 +54,7 @@ public class RecoilScript : MonoBehaviour
         Gun.GetComponent<Animator>().Play("Recoil");
 
         // Use the cooldownSeconds from the gun controller to wait
-        yield return new WaitForSeconds(gunControllerPlayer.cooldownSeconds);
+        yield return new WaitForSecondsRealtime(_gunController.cooldownSeconds);
 
         // Ensure the animation stops playing by setting it to a default state
         Gun.GetComponent<Animator>().Play("New State");

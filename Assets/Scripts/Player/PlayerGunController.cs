@@ -9,7 +9,7 @@ namespace Player
     [RequireComponent(typeof(InputManager), typeof(PlayerHealthController))]
     public class PlayerGunController : MonoBehaviour
     {
-        public GunControllerPlayer gun;
+        public GunController gun;
         private InputManager _inputManager;
         private bool _isPaused;
         private PlayerHealthController _healthController;

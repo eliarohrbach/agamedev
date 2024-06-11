@@ -38,7 +38,7 @@ namespace Enemy
         /// PatrolState is persisted, to not loose the last visited path node.
         /// </summary>
         private PatrolState patrolState;
-        public GunControllerEnemy gun;
+        public GunController gun;
         private EnemyHealthController _healthController;
         /// <summary>
         /// The current state.

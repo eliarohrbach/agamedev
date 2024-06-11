@@ -124,8 +124,8 @@ MonoBehaviour:
   rotationSpeed: 5
   fov: 180
   automaticDetectionRadius: 4
-  gun: {fileID: 7609575931012155473}
   patrolPath: []
+  gun: {fileID: 8714274371429634095}
 --- !u!195 &8183663569621223309
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -419,7 +419,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 326678792384415171, guid: 8399ac8ce402c2d4793e9e267bd85600, type: 3}
       propertyPath: cooldownSeconds
-      value: 1.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 326678792384415171, guid: 8399ac8ce402c2d4793e9e267bd85600, type: 3}
       propertyPath: bulletSpawnPoint
@@ -481,41 +481,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: Gun
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 326678792384415171, guid: 8399ac8ce402c2d4793e9e267bd85600, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 516012129473481423, guid: 8399ac8ce402c2d4793e9e267bd85600, type: 3}
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8849650051533569207, guid: 8399ac8ce402c2d4793e9e267bd85600, type: 3}
-      insertIndex: 1
-      addedObject: {fileID: 7609575931012155473}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8399ac8ce402c2d4793e9e267bd85600, type: 3}
---- !u!1 &484012895580744027 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8849650051533569207, guid: 8399ac8ce402c2d4793e9e267bd85600, type: 3}
-  m_PrefabInstance: {fileID: 8964356782552028652}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &7609575931012155473
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 484012895580744027}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 100e1670ab2d31446941576d49c7ef72, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bulletSpawnPoint: {fileID: 7635240116833721739}
-  bulletPrefab: {fileID: 8801948666832611880, guid: 25c651af5191784419c6118200d450de, type: 3}
-  cooldownSeconds: 1
-  useUnscaledTime: 0
-  gunShotAudioClip: {fileID: 8300000, guid: 11b39272e2d84a64198284d0e7cd3954, type: 3}
-  gunCooldownReadyAudioClip: {fileID: 8300000, guid: 1d6fe19476c282242a46acad89dfc1ed, type: 3}
 --- !u!4 &3929711435443999204 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5399509487915533320, guid: 8399ac8ce402c2d4793e9e267bd85600, type: 3}
   m_PrefabInstance: {fileID: 8964356782552028652}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8714274371429634095 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 326678792384415171, guid: 8399ac8ce402c2d4793e9e267bd85600, type: 3}
+  m_PrefabInstance: {fileID: 8964356782552028652}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f325f6eb8d6a4170bf91a9d2fd6ecbc0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
