@@ -4905,7 +4905,7 @@ GameObject:
   - component: {fileID: 326678792384415171}
   - component: {fileID: 5851768022971663401}
   m_Layer: 6
-  m_Name: Gun (Alexander Wyss)
+  m_Name: Gun (Alexander Wyss + Martin Hoeger)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
