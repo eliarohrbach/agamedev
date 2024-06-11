@@ -16,9 +16,10 @@ namespace Enemy.ai
             this.enemyController = enemyController;
             this.target = target;
         }
-
+        
         public void Start()
         {
+            enemyController.InformNearbyAllies(target);
         }
 
         public IState Update()

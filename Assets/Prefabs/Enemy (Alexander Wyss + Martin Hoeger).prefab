@@ -126,6 +126,8 @@ MonoBehaviour:
   automaticDetectionRadius: 4
   patrolPath: []
   gun: {fileID: 8714274371429634095}
+  alertRadius: 50
+  AlertIndicatorSpehere: {fileID: 4144786853409512164, guid: 01f541f0d8d26ee42b7d2ab185f668bc, type: 3}
 --- !u!195 &8183663569621223309
 NavMeshAgent:
   m_ObjectHideFlags: 0

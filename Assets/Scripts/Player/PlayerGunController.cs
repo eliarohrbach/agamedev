@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections;
+using Enemy;
 using Gun;
 using UnityEditor;
 using UnityEngine;
@@ -17,6 +19,10 @@ namespace Player
         private InputManager _inputManager;
         private bool _isPaused;
         private PlayerHealthController _healthController;
+        /// <summary>
+        /// How faraway enemies are alerted when the player fires his gun.
+        /// </summary>
+        public float alertRadius = 50;
 
         private void Awake()
         {
@@ -28,13 +34,16 @@ namespace Player
         private void OnEnable()
         {
             _healthController.OnDeath += Pause;
+            gun.OnFire += AlertNearbyEnemies;
         }
 
+   
 
         private void OnDisable()
         {
             _healthController.OnDeath -= Pause;
             _isPaused = false;
+            gun.OnFire -= AlertNearbyEnemies;
         }
 
         private void Pause()
@@ -50,7 +59,23 @@ namespace Player
             if (!_isPaused && _inputManager.GetFireGun())
             {
                 gun.Fire();
-
+            }
+        }
+        
+        /// <summary>
+        /// On a gun shot, all nearby enemies are alerted to the player.
+        /// </summary>
+        private void AlertNearbyEnemies()
+        {
+            Collider[] results = new Collider[20];
+            var numberOrResults = Physics.OverlapSphereNonAlloc(transform.position, alertRadius, results, LayerMask.GetMask("MovingEntities"));
+            for (int i = 0; i < numberOrResults; i++)
+            {
+                var result = results[i];
+                if (result.CompareTag("Enemy"))
+                {
+                    result.GetComponent<EnemyAIController>()?.InformAboutTarget(gameObject);
+                }
             }
         }
     }

@@ -1,6 +1,7 @@
 ﻿using Enemy.ai;
 using Gun;
 using UnityEngine;
+using IState = Enemy.ai.IState;
 
 namespace Enemy
 {
@@ -45,12 +46,26 @@ namespace Enemy
         /// </summary>
         private IState state;
 
+        /// <summary>
+        /// How faraway allies are alerted when the player is detected.
+        /// </summary>
+        public float alertRadius = 50;
+        /// <summary>
+        /// When was the last time the enemy alerted others or has been alerted. This is used to prevent it from spamming alerts.
+        /// </summary>
+        private float timeOfLastAlert;
+        /// <summary>
+        /// Temp variable to store target that the enemy has been informed about.
+        /// </summary>
+        private GameObject informedTarget;
+
         
         /// <summary>
         /// Initializes fixed fields.
         /// </summary>
         private void Awake()
         {
+            timeOfLastAlert = -5;
             NavMeshAgent = GetComponent<NavMeshAgentWithObstacle>();
             possibleTargets = GameObject.FindGameObjectsWithTag("Player");
             _healthController = GetComponent<EnemyHealthController>();
@@ -152,10 +167,17 @@ namespace Enemy
 
         /// <summary>
         /// Checks is currently any target is visible. Only considers targets within the list possibleTargets.
+        /// If the enemy has been informed about a target location, this target is returned instead.
         /// </summary>
         /// <returns>The first visible target or null if none are visible.</returns>
         public GameObject CheckForTargetInSight()
         {
+            if (informedTarget is not null)
+            {
+                var newTarget = informedTarget;
+                informedTarget = null;
+                return newTarget;
+            }
             foreach (var target in possibleTargets)
             {
                 if (CanSee(target))
@@ -187,6 +209,35 @@ namespace Enemy
             }
 
             return new WaitState(this);
+        }
+
+        /// <summary>
+        /// Informs all nearby allies of the detected target.
+        /// </summary>
+        /// <param name="target"></param>
+        public void InformNearbyAllies(GameObject target)
+        {
+            if (timeOfLastAlert + 5 > Time.time)
+            {
+                return;
+            }
+            timeOfLastAlert = Time.time;
+            Collider[] results = new Collider[20];
+            var numberOrResults = Physics.OverlapSphereNonAlloc(transform.position, alertRadius, results, LayerMask.GetMask("MovingEntities"));
+            for (int i = 0; i < numberOrResults; i++)
+            {
+                var result = results[i];
+                if (result.CompareTag("Enemy"))
+                {
+                    result.GetComponent<EnemyAIController>()?.InformAboutTarget(target);
+                }
+            }
+        }
+
+        public void InformAboutTarget(GameObject target)
+        {
+            timeOfLastAlert = Time.time;
+            informedTarget = target;
         }
     }
 }
