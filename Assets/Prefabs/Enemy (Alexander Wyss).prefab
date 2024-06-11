@@ -425,6 +425,14 @@ PrefabInstance:
       propertyPath: bulletSpawnPoint
       value: 
       objectReference: {fileID: 7635240116833721739}
+    - target: {fileID: 1551752260147338387, guid: 8399ac8ce402c2d4793e9e267bd85600, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4801804432801340712, guid: 8399ac8ce402c2d4793e9e267bd85600, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 5399509487915533320, guid: 8399ac8ce402c2d4793e9e267bd85600, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.0034190593
@@ -465,6 +473,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 175
       objectReference: {fileID: 0}
+    - target: {fileID: 5550643262109852653, guid: 8399ac8ce402c2d4793e9e267bd85600, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7495438480141362250, guid: 8399ac8ce402c2d4793e9e267bd85600, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 8255184605377441529, guid: 8399ac8ce402c2d4793e9e267bd85600, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0
@@ -480,6 +496,10 @@ PrefabInstance:
     - target: {fileID: 8849650051533569207, guid: 8399ac8ce402c2d4793e9e267bd85600, type: 3}
       propertyPath: m_Name
       value: Gun
+      objectReference: {fileID: 0}
+    - target: {fileID: 8849650051533569207, guid: 8399ac8ce402c2d4793e9e267bd85600, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
