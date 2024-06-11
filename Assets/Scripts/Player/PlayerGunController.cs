@@ -6,6 +6,10 @@ using UnityEngine.Rendering.HighDefinition;
 
 namespace Player
 {
+    /// <summary>
+    /// Author: Alexander Wyss
+    /// Responsible for translating the attack input into a gun shot.
+    /// </summary>
     [RequireComponent(typeof(InputManager), typeof(PlayerHealthController))]
     public class PlayerGunController : MonoBehaviour
     {
@@ -38,6 +42,9 @@ namespace Player
             _isPaused = true;
         }
 
+        /// <summary>
+        /// Fires the weapon if the input is pressed.
+        /// </summary>
         private void Update()
         {
             if (!_isPaused && _inputManager.GetFireGun())

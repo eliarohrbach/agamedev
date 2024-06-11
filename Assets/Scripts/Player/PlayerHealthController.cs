@@ -7,9 +7,17 @@ using UnityEngine.SceneManagement;
 
 namespace Player
 {
+    /// <summary>
+    /// Author: Alexander Wyss
+    /// Responsible for the death animation and restarting the scene after death.
+    /// Implements the interface IDamageable. This is called if a bullet hits a collider.
+    /// </summary>
     [RequireComponent(typeof(Collider), typeof(CharacterController))]
     public class PlayerHealthController : MonoBehaviour, IDamageable
     {
+        /// <summary>
+        /// Make the player invulnerable. For testing purposes.
+        /// </summary>
         public bool invulnerable = false;
         private bool _isDead;
 
@@ -18,8 +26,15 @@ namespace Player
             _isDead = false;
         }
 
+        /// <summary>
+        /// Invoked once the player dies.
+        /// </summary>
         public event Action OnDeath = delegate { };
 
+        /// <summary>
+        /// Invoke OnDeath and start the death animation.
+        /// Ensure both is done only once.
+        /// </summary>
         public void ApplyDamage()
         {
             if (!invulnerable && !_isDead)
@@ -30,6 +45,13 @@ namespace Player
             }
         }
 
+        /// <summary>
+        ///  On Death we want the player to fall to the ground.
+        /// We add a rigidbody and normal collider, and apply a small force to make the player tip over.
+        /// The CharacterController must be disabled, as it interferes with the rigidbody.
+        /// After a short time we reload the scene. 
+        /// </summary>
+        /// <returns></returns>
         private IEnumerator DeathAnimation()
         {
             var rigidbody = gameObject.AddComponent<Rigidbody>();

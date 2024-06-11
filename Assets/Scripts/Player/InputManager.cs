@@ -4,6 +4,10 @@ using UnityEngine.InputSystem;
 
 namespace Player
 {
+    /// <summary>
+    /// Author: Alexander Wyss
+    /// Initializes all Input Actions and provides access.
+    /// </summary>
     public class InputManager : MonoBehaviour
     {
         public InputActionAsset actions;

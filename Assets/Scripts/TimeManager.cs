@@ -1,6 +1,11 @@
 using Player;
 using UnityEngine;
 
+/// <summary>
+/// Author: Alexander Wyss
+/// Sets the time scaled based on the movement of the player.
+/// As long the player moves time increasingly slows down to a defined threshold.
+/// </summary>
 public class TimeManager : MonoBehaviour
 {
     private PlayerMovementController _playerMovementController;
@@ -22,6 +27,10 @@ public class TimeManager : MonoBehaviour
         Time.timeScale = 1;
     }
 
+    /// <summary>
+    /// Set the time scale based on the player acceleration. The faster the player is the slower time passes.
+    /// If the player stops, its acceleration is set to zero, and time speeds up again.
+    /// </summary>
     void Update()
     {
         var timeScale = 1f;

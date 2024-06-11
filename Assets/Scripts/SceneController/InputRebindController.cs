@@ -5,6 +5,11 @@ using UnityEngine.InputSystem;
 
 namespace SceneController
 {
+    
+    /// <summary>
+    /// Author: Alexander Wyss
+    /// Allows the inputs to be configured. And sets the ui elements.
+    /// </summary>
     public class InputRebindController: MonoBehaviour
     {
         public InputActionAsset actions;
@@ -28,6 +33,9 @@ namespace SceneController
         private int fireIndex = 0;
        
 
+        /// <summary>
+        /// Initialize all action maps and ui elements.
+        /// </summary>
         public void Awake()
         {
             actionMap = actions.FindActionMap("input");
@@ -74,6 +82,13 @@ namespace SceneController
             RemapButtonClicked(fire, fireIndex, fireText);
         }
         
+        /// <summary>
+        /// Waits for physical input of the player and remaps the given action to the input.
+        /// Sets the new text on the provided ui element.
+        /// </summary>
+        /// <param name="actionToRebind"></param>
+        /// <param name="bindingIndex"></param>
+        /// <param name="text"></param>
         void RemapButtonClicked(InputAction actionToRebind, int bindingIndex, TextMeshProUGUI text)
         {
             text.text = "<->";
