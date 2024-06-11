@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using SceneController;
+using UnityEngine;
 
 namespace Gun
 {
@@ -15,7 +16,7 @@ namespace Gun
         public float despawnTimeSeconds = 100;
         private float _startTime;
 
-        private void Start()
+        private void OnEnable()
         {
             _startTime = Time.time;
         }
@@ -25,7 +26,8 @@ namespace Gun
             transform.position += transform.forward * (Time.deltaTime * speed);
             if (Time.time > _startTime + despawnTimeSeconds)
             {
-                Destroy(gameObject);
+               
+                ObjectPool.SharedInstance.DestroyBullet(gameObject);
             }
         }
 
@@ -34,7 +36,7 @@ namespace Gun
             var shootableGameObject = other.GetComponent<IDamageable>();
             shootableGameObject?.ApplyDamage();
 
-            Destroy(gameObject);
+            ObjectPool.SharedInstance.DestroyBullet(gameObject);
         }
     }
 }

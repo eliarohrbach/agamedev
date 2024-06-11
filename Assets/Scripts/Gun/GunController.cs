@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using SceneController;
 using UnityEngine;
 
 namespace Gun
@@ -29,10 +30,6 @@ namespace Gun
         /// Where the bullet is spawned.
         /// </summary>
         public Transform bulletSpawnPoint;
-        /// <summary>
-        /// The bullet to spawn.
-        /// </summary>
-        public GameObject bulletPrefab;
         /// <summary>
         /// The reload time.
         /// </summary>
@@ -76,7 +73,7 @@ namespace Gun
             var currentTime = GetTime();
             if (currentTime > _timeOfLastShot + cooldownSeconds && (!useMagazine || magazin.bulletCount > 0))
             {
-                Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
+                ObjectPool.SharedInstance.InstantiateBullet(bulletSpawnPoint.position, bulletSpawnPoint.rotation);
                 _timeOfLastShot = currentTime;
                 _audioSource.PlayOneShot(gunShotAudioClip);
                 StartCoroutine(PlayGunReadyAudioClip());

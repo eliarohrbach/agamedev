@@ -496,6 +496,7 @@ GameObject:
   - component: {fileID: 73272551243992551}
   - component: {fileID: 5249861857196475336}
   - component: {fileID: 7868247448350558569}
+  - component: {fileID: 3368597267692033626}
   m_Layer: 0
   m_Name: SceneController (Severin Landolt)
   m_TagString: Untagged
@@ -554,6 +555,20 @@ MonoBehaviour:
   player: {fileID: 0}
   ui: {fileID: 0}
   triggerOn: 0
+--- !u!114 &3368597267692033626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5357264874985680847}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5499518d522f3c94e9e11d31e3863cc2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 8801948666832611880, guid: 25c651af5191784419c6118200d450de, type: 3}
+  amountToPoolBullet: 20
 --- !u!1 &6029363673687571367
 GameObject:
   m_ObjectHideFlags: 0
