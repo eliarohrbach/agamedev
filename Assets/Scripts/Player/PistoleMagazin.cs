@@ -7,6 +7,7 @@ using UnityEngine;
 
 // If necessary, the ScriptableObject allows for easily carrying over the
 // current available number of bullets to the next level
+// This is currently not used
 
 [CreateAssetMenu(fileName = "PistoleMagazin", menuName = "ScriptableObjects/PistoleMagazin", order = 1)]
 public class PistoleMagazin : ScriptableObject

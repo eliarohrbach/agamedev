@@ -1,0 +1,172 @@
+fileFormatVersion: 2
+guid: 5f2137b9d94d13c4bb0f0d173aaf1bcf
+timeCreated: 1492583440
+licenseType: Store
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: MetBarrel_clsd_cread_collider
+    100002: MetBarrel_clsd_deform_A_collider
+    100004: MetBarrel_clsd_deform_B_collider
+    100006: MetBarrel_clsd_deform_C_collider
+    100008: MetBarrel_clsd_deform_D_collider
+    100010: MetBarrel_clsd_reg_collider
+    100012: MetBarrel_clsd_smash_A_collider
+    100014: MetBarrel_clsd_smash_B_collider
+    100016: MetBarrel_clsd_smash_C_collider
+    100018: //RootNode
+    100020: MetBarrel_opnd_creased_collider
+    100022: MetBarrel_opnd_deform_A_collider
+    100024: MetBarrel_opnd_deform_B_collider
+    100026: MetBarrel_opnd_deform_C_collider
+    100028: MetBarrel_opnd_deform_D_collider
+    100030: MetBarrel_opnd_reg_collider
+    100032: MetBarrel_opnd_smash_A_collider
+    100034: MetBarrel_opnd_smash_B_collider
+    100036: MetBarrel_opnd_smash_C_collider
+    100038: MetBarrel_clsd_creased_collider
+    400000: MetBarrel_clsd_cread_collider
+    400002: MetBarrel_clsd_deform_A_collider
+    400004: MetBarrel_clsd_deform_B_collider
+    400006: MetBarrel_clsd_deform_C_collider
+    400008: MetBarrel_clsd_deform_D_collider
+    400010: MetBarrel_clsd_reg_collider
+    400012: MetBarrel_clsd_smash_A_collider
+    400014: MetBarrel_clsd_smash_B_collider
+    400016: MetBarrel_clsd_smash_C_collider
+    400018: //RootNode
+    400020: MetBarrel_opnd_creased_collider
+    400022: MetBarrel_opnd_deform_A_collider
+    400024: MetBarrel_opnd_deform_B_collider
+    400026: MetBarrel_opnd_deform_C_collider
+    400028: MetBarrel_opnd_deform_D_collider
+    400030: MetBarrel_opnd_reg_collider
+    400032: MetBarrel_opnd_smash_A_collider
+    400034: MetBarrel_opnd_smash_B_collider
+    400036: MetBarrel_opnd_smash_C_collider
+    400038: MetBarrel_clsd_creased_collider
+    2300000: MetBarrel_clsd_cread_collider
+    2300002: MetBarrel_clsd_deform_A_collider
+    2300004: MetBarrel_clsd_deform_B_collider
+    2300006: MetBarrel_clsd_deform_C_collider
+    2300008: MetBarrel_clsd_deform_D_collider
+    2300010: MetBarrel_clsd_reg_collider
+    2300012: MetBarrel_clsd_smash_A_collider
+    2300014: MetBarrel_clsd_smash_B_collider
+    2300016: MetBarrel_clsd_smash_C_collider
+    2300018: MetBarrel_opnd_creased_collider
+    2300020: MetBarrel_opnd_deform_A_collider
+    2300022: MetBarrel_opnd_deform_B_collider
+    2300024: MetBarrel_opnd_deform_C_collider
+    2300026: MetBarrel_opnd_deform_D_collider
+    2300028: MetBarrel_opnd_reg_collider
+    2300030: MetBarrel_opnd_smash_A_collider
+    2300032: MetBarrel_opnd_smash_B_collider
+    2300034: MetBarrel_opnd_smash_C_collider
+    2300036: MetBarrel_clsd_creased_collider
+    3300000: MetBarrel_clsd_cread_collider
+    3300002: MetBarrel_clsd_deform_A_collider
+    3300004: MetBarrel_clsd_deform_B_collider
+    3300006: MetBarrel_clsd_deform_C_collider
+    3300008: MetBarrel_clsd_deform_D_collider
+    3300010: MetBarrel_clsd_reg_collider
+    3300012: MetBarrel_clsd_smash_A_collider
+    3300014: MetBarrel_clsd_smash_B_collider
+    3300016: MetBarrel_clsd_smash_C_collider
+    3300018: MetBarrel_opnd_creased_collider
+    3300020: MetBarrel_opnd_deform_A_collider
+    3300022: MetBarrel_opnd_deform_B_collider
+    3300024: MetBarrel_opnd_deform_C_collider
+    3300026: MetBarrel_opnd_deform_D_collider
+    3300028: MetBarrel_opnd_reg_collider
+    3300030: MetBarrel_opnd_smash_A_collider
+    3300032: MetBarrel_opnd_smash_B_collider
+    3300034: MetBarrel_opnd_smash_C_collider
+    3300036: MetBarrel_clsd_creased_collider
+    4300000: MetBarrel_clsd_cread_collider
+    4300002: MetBarrel_clsd_deform_A_collider
+    4300004: MetBarrel_clsd_deform_B_collider
+    4300006: MetBarrel_clsd_deform_C_collider
+    4300008: MetBarrel_clsd_deform_D_collider
+    4300010: MetBarrel_clsd_reg_collider
+    4300012: MetBarrel_clsd_smash_A_collider
+    4300014: MetBarrel_clsd_smash_B_collider
+    4300016: MetBarrel_clsd_smash_C_collider
+    4300018: MetBarrel_opnd_creased_collider
+    4300020: MetBarrel_opnd_deform_B_collider
+    4300022: MetBarrel_opnd_deform_C_collider
+    4300024: MetBarrel_opnd_deform_D_collider
+    4300026: MetBarrel_opnd_deform_A_collider
+    4300028: MetBarrel_opnd_reg_collider
+    4300030: MetBarrel_opnd_smash_A_collider
+    4300032: MetBarrel_opnd_smash_B_collider
+    4300034: MetBarrel_opnd_smash_C_collider
+    4300036: MetBarrel_clsd_creased_collider
+  materials:
+    importMaterials: 1
+    materialName: 1
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
