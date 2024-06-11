@@ -129,7 +129,7 @@ GameObject:
   - component: {fileID: 6305890915728563804}
   - component: {fileID: 1486671178970484903}
   m_Layer: 0
-  m_Name: Bullet
+  m_Name: Bullet (Alexander Wyss)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

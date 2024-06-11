@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1022137697718353022}
   - component: {fileID: 2552363434099522770}
   m_Layer: 0
-  m_Name: NavMesh Surface
+  m_Name: NavMesh Surface (Alexander Wyss)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

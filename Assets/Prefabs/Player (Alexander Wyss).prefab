@@ -287,7 +287,7 @@ GameObject:
   - component: {fileID: 7829148369638147947}
   - component: {fileID: 1501689983946527068}
   m_Layer: 6
-  m_Name: Player
+  m_Name: Player (Alexander Wyss)
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

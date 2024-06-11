@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3441796375405268398}
   - component: {fileID: 140250387950390007}
   m_Layer: 0
-  m_Name: TimeManagement
+  m_Name: TimeManagement (Alexander Wyss)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

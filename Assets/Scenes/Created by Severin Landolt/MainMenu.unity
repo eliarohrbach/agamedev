@@ -6435,7 +6435,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 44587441323523054, guid: 89558afb8d436f141b8ad398bf6b469a, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 20
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 44587441323523054, guid: 89558afb8d436f141b8ad398bf6b469a, type: 3}
       propertyPath: m_SizeDelta.y
@@ -6493,6 +6493,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 989776084121419595, guid: 89558afb8d436f141b8ad398bf6b469a, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 41
+      objectReference: {fileID: 0}
     - target: {fileID: 4338340921186769079, guid: 89558afb8d436f141b8ad398bf6b469a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -6504,6 +6508,10 @@ PrefabInstance:
     - target: {fileID: 4338340921186769079, guid: 89558afb8d436f141b8ad398bf6b469a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: SceneController.InputRebindController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4913518436648390783, guid: 89558afb8d436f141b8ad398bf6b469a, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 4973254574580770522, guid: 89558afb8d436f141b8ad398bf6b469a, type: 3}
       propertyPath: m_Name
@@ -6694,7 +6702,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 44587441323523054, guid: 89558afb8d436f141b8ad398bf6b469a, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 20
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 44587441323523054, guid: 89558afb8d436f141b8ad398bf6b469a, type: 3}
       propertyPath: m_SizeDelta.y
@@ -6752,6 +6760,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 989776084121419595, guid: 89558afb8d436f141b8ad398bf6b469a, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 41
+      objectReference: {fileID: 0}
     - target: {fileID: 4338340921186769079, guid: 89558afb8d436f141b8ad398bf6b469a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -6763,6 +6775,10 @@ PrefabInstance:
     - target: {fileID: 4338340921186769079, guid: 89558afb8d436f141b8ad398bf6b469a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: SceneController.InputRebindController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4913518436648390783, guid: 89558afb8d436f141b8ad398bf6b469a, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 4973254574580770522, guid: 89558afb8d436f141b8ad398bf6b469a, type: 3}
       propertyPath: m_Name
@@ -6827,7 +6843,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 44587441323523054, guid: 89558afb8d436f141b8ad398bf6b469a, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 20
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 44587441323523054, guid: 89558afb8d436f141b8ad398bf6b469a, type: 3}
       propertyPath: m_SizeDelta.y
@@ -6885,6 +6901,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 989776084121419595, guid: 89558afb8d436f141b8ad398bf6b469a, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 41
+      objectReference: {fileID: 0}
     - target: {fileID: 4338340921186769079, guid: 89558afb8d436f141b8ad398bf6b469a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -6896,6 +6916,10 @@ PrefabInstance:
     - target: {fileID: 4338340921186769079, guid: 89558afb8d436f141b8ad398bf6b469a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: SceneController.InputRebindController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4913518436648390783, guid: 89558afb8d436f141b8ad398bf6b469a, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 4973254574580770522, guid: 89558afb8d436f141b8ad398bf6b469a, type: 3}
       propertyPath: m_Name
@@ -7480,7 +7504,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 44587441323523054, guid: 89558afb8d436f141b8ad398bf6b469a, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 20
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 44587441323523054, guid: 89558afb8d436f141b8ad398bf6b469a, type: 3}
       propertyPath: m_SizeDelta.y
@@ -7538,6 +7562,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 989776084121419595, guid: 89558afb8d436f141b8ad398bf6b469a, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 41
+      objectReference: {fileID: 0}
     - target: {fileID: 4338340921186769079, guid: 89558afb8d436f141b8ad398bf6b469a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -7549,6 +7577,10 @@ PrefabInstance:
     - target: {fileID: 4338340921186769079, guid: 89558afb8d436f141b8ad398bf6b469a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: SceneController.InputRebindController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4913518436648390783, guid: 89558afb8d436f141b8ad398bf6b469a, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 4973254574580770522, guid: 89558afb8d436f141b8ad398bf6b469a, type: 3}
       propertyPath: m_Name
@@ -7965,7 +7997,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 44587441323523054, guid: 89558afb8d436f141b8ad398bf6b469a, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 20
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 44587441323523054, guid: 89558afb8d436f141b8ad398bf6b469a, type: 3}
       propertyPath: m_SizeDelta.y
@@ -8023,6 +8055,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 989776084121419595, guid: 89558afb8d436f141b8ad398bf6b469a, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 41
+      objectReference: {fileID: 0}
     - target: {fileID: 4338340921186769079, guid: 89558afb8d436f141b8ad398bf6b469a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -8034,6 +8070,10 @@ PrefabInstance:
     - target: {fileID: 4338340921186769079, guid: 89558afb8d436f141b8ad398bf6b469a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: SceneController.InputRebindController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4913518436648390783, guid: 89558afb8d436f141b8ad398bf6b469a, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 4973254574580770522, guid: 89558afb8d436f141b8ad398bf6b469a, type: 3}
       propertyPath: m_Name
@@ -8621,7 +8661,7 @@ GameObject:
   - component: {fileID: 1958153930}
   - component: {fileID: 1958153929}
   m_Layer: 0
-  m_Name: SettingsWindow
+  m_Name: SettingsWindow (Alexander Wyss)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8822,7 +8862,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 44587441323523054, guid: 89558afb8d436f141b8ad398bf6b469a, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 20
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 44587441323523054, guid: 89558afb8d436f141b8ad398bf6b469a, type: 3}
       propertyPath: m_SizeDelta.y
@@ -8880,6 +8920,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 989776084121419595, guid: 89558afb8d436f141b8ad398bf6b469a, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 41
+      objectReference: {fileID: 0}
     - target: {fileID: 4338340921186769079, guid: 89558afb8d436f141b8ad398bf6b469a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -8891,6 +8935,10 @@ PrefabInstance:
     - target: {fileID: 4338340921186769079, guid: 89558afb8d436f141b8ad398bf6b469a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: SceneController.InputRebindController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4913518436648390783, guid: 89558afb8d436f141b8ad398bf6b469a, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 4973254574580770522, guid: 89558afb8d436f141b8ad398bf6b469a, type: 3}
       propertyPath: m_Name
