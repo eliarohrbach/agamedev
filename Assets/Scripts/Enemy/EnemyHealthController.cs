@@ -4,11 +4,10 @@ using UnityEngine;
 
 namespace Enemy
 {
-    
     /// <summary>
     /// Author: Alexander Wyss
     /// Ammunition Author: Severin Landolt
-    /// Sound Effect/Death Animation Author:  Martin Hoeger, Alexander Wyss
+    /// Sound Effect/Death Animation Author: Martin Hoeger, Alexander Wyss
     ///
     /// Implements the interface IDamageable. This is called if a bullet hits a collider.
     /// Destroys the enemy and initiates the death effect and ammunition drop.
@@ -19,9 +18,11 @@ namespace Enemy
         public GameObject deathEffect;
         public GameObject ammunition;
         private bool isDead = false;
-        
+
         public event Action OnDeath = delegate { };
 
+        // Add a reference to the EnemyManager
+        public EnemyManager enemyManager;
 
         private void OnEnable()
         {
@@ -42,6 +43,13 @@ namespace Enemy
                         Instantiate(ammunition, transform.position, transform.rotation);
                     }
                 }
+
+                // Notify the EnemyManager that this enemy has been killed
+                if (enemyManager != null)
+                {
+                    enemyManager.EnemyKilled();
+                }
+
                 Destroy(gameObject);
             }
         }
