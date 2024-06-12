@@ -1,6 +1,10 @@
 using System.Collections;
 using UnityEngine;
 
+/// <summary>
+/// Author: Elia Rohrbach
+/// Implements the gate mechanic in the first level 
+/// </summary>
 public class EnemyManager : MonoBehaviour
 {
     public int totalEnemies = 3; // Set this to the number of enemies in your scene

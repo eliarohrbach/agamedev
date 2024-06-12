@@ -8,7 +8,7 @@ namespace Enemy
     /// Author: Alexander Wyss
     /// Ammunition Author: Severin Landolt
     /// Sound Effect/Death Animation Author: Martin Hoeger, Alexander Wyss
-    ///
+    /// Enemy Manager Call: Elia Rohrbach
     /// Implements the interface IDamageable. This is called if a bullet hits a collider.
     /// Destroys the enemy and initiates the death effect and ammunition drop.
     /// </summary>
@@ -21,7 +21,6 @@ namespace Enemy
 
         public event Action OnDeath = delegate { };
 
-        // Add a reference to the EnemyManager
         public EnemyManager enemyManager;
 
         private void OnEnable()
@@ -44,7 +43,6 @@ namespace Enemy
                     }
                 }
 
-                // Notify the EnemyManager that this enemy has been killed
                 if (enemyManager != null)
                 {
                     enemyManager.EnemyKilled();
